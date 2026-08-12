@@ -76,6 +76,27 @@ quest marked completed before its completion event, ghost item (the silver
 key). Negative controls (2): System flavor text with no stat change, and the
 intentionally repeating status-block format.
 
+> **Known inconsistency in the `litrpg` ghost-item defect.** `rec-ev-silver-key`
+> (`used_item`, `silver_key`) is the planted ghost item, and `rec-ev-potion`
+> (`consumed`, `red_potion`) is structurally identical to it — no acquisition record
+> anywhere in the 19 records, and absent from every prose `[INVENTORY]` block — yet
+> only the silver key is labelled a defect. Consuming an item you never had is equally
+> a ghost, so the only mechanical discriminator available to a detector is the
+> predicate name: `used_item` versus `consumed`.
+>
+> The consequence is measurable. A principled ghost rule emits **seven** findings
+> against six gold, and narrowing the rule to `used_item` to reach 6/6 leaves it with a
+> fixture population of exactly one — a check barely distinguishable from `assert
+> True`. ContinuityEvaluation's `inventory.ghost.v0` currently takes the narrow scope
+> and pins the asymmetry in `test_consumed_item_without_acquisition_is_not_reported`,
+> which is the test that should fail and be rewritten when the fixture changes.
+>
+> Two fixture-side resolutions: label `red_potion` as a second ghost-item defect, or
+> give it an acquisition record so it becomes a negative control for the rule. The
+> second is more valuable — it would give this check its only in-fixture negative
+> example. Either way it is authored ground truth and therefore human work, and it must
+> not be resolved by loosening the detector.
+
 Per fixture, `fixtures/golden/<name>/` contains:
 
 - `manuscript.json` — `ManuscriptRevision` with inline scene content and hashes
