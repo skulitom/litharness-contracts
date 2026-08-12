@@ -1,0 +1,62 @@
+{
+  "meta": {
+    "schema_version": "1.0.0",
+    "artifact_id": "201757d1-d3ac-5ff3-8a81-5aafa360b11d",
+    "artifact_kind": "plan_snapshot",
+    "created_at": "2026-08-12T00:00:00Z",
+    "actor": "fixture-builder",
+    "tool": {
+      "name": "litharness-contracts-fixtures",
+      "version": "0.1.0"
+    },
+    "source_revisions": [
+      {
+        "project_id": "f68b8076-56d4-52a6-be0d-50f36113ad69",
+        "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+        "branch_id": "c2c20280-e284-52f6-b8f5-9872de3af6da",
+        "logical_id": "book",
+        "kind": "manuscript_book",
+        "version_id": "cfb8482a-e846-59f0-a319-35c852c8ae8a"
+      }
+    ],
+    "dependencies": [],
+    "warnings": []
+  },
+  "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+  "branch_id": "c2c20280-e284-52f6-b8f5-9872de3af6da",
+  "revision_id": "cfb8482a-e846-59f0-a319-35c852c8ae8a",
+  "items": [
+    {
+      "logical_id": "plan-litrpg-premise",
+      "kind": "premise",
+      "text": "A debtor named Rook works off a debt to the tollkeeper Marrow along a System-governed toll road; explicit game state (status blocks) is canonical.",
+      "authority": "canonical_in_prose",
+      "locked": false,
+      "links": []
+    },
+    {
+      "logical_id": "plan-debt",
+      "kind": "promise",
+      "text": "Rook's debt to Marrow must be resolved at the toll gate before the story ends.",
+      "authority": "intended",
+      "locked": true,
+      "links": []
+    },
+    {
+      "logical_id": "plan-status-format",
+      "kind": "constraint",
+      "text": "A status block appears in every scene; repetition of the block format is intentional and must not be flagged as an echo.",
+      "authority": "intended",
+      "locked": true,
+      "links": []
+    },
+    {
+      "logical_id": "plan-flavor",
+      "kind": "constraint",
+      "text": "System flavor text ('You feel stronger') may appear without any stat change; it is unreliable color, not a state event.",
+      "authority": "intended",
+      "locked": true,
+      "links": []
+    }
+  ]
+}

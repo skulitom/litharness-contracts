@@ -1,0 +1,246 @@
+{
+  "meta": {
+    "schema_version": "1.0.0",
+    "artifact_id": "8d63ba31-0df3-5c4d-b3d5-d8f05c3c11d7",
+    "artifact_kind": "gold_context_suite",
+    "created_at": "2026-08-12T00:00:00Z",
+    "actor": "fixture-builder",
+    "tool": {
+      "name": "litharness-contracts-fixtures",
+      "version": "0.1.0"
+    },
+    "source_revisions": [
+      {
+        "project_id": "f68b8076-56d4-52a6-be0d-50f36113ad69",
+        "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+        "branch_id": "c2c20280-e284-52f6-b8f5-9872de3af6da",
+        "logical_id": "book",
+        "kind": "manuscript_book",
+        "version_id": "cfb8482a-e846-59f0-a319-35c852c8ae8a"
+      }
+    ],
+    "dependencies": [],
+    "warnings": []
+  },
+  "fixture_id": "litrpg",
+  "cases": [
+    {
+      "query": {
+        "meta": {
+          "schema_version": "1.0.0",
+          "artifact_id": "6448ff3b-18ef-5a45-822f-a46ede8452a5",
+          "artifact_kind": "context_query",
+          "created_at": "2026-08-12T00:00:00Z",
+          "actor": "fixture-builder",
+          "tool": {
+            "name": "litharness-contracts-fixtures",
+            "version": "0.1.0"
+          },
+          "source_revisions": [
+            {
+              "project_id": "f68b8076-56d4-52a6-be0d-50f36113ad69",
+              "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+              "branch_id": "c2c20280-e284-52f6-b8f5-9872de3af6da",
+              "logical_id": "book",
+              "kind": "manuscript_book",
+              "version_id": "cfb8482a-e846-59f0-a319-35c852c8ae8a"
+            }
+          ],
+          "dependencies": [],
+          "warnings": []
+        },
+        "query_id": "q1-audit-gold",
+        "operation": "evaluate",
+        "target": {
+          "project_id": "f68b8076-56d4-52a6-be0d-50f36113ad69",
+          "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+          "branch_id": "c2c20280-e284-52f6-b8f5-9872de3af6da",
+          "logical_id": "book",
+          "kind": "manuscript_book",
+          "version_id": "cfb8482a-e846-59f0-a319-35c852c8ae8a"
+        },
+        "token_budget": 3000,
+        "intent": "Audit the gold ledger across the book.",
+        "referenced_entities": [],
+        "referenced_threads": [],
+        "hard_requirements": [],
+        "exclusions": [],
+        "policy_version": "gold.v1"
+      },
+      "mandatory": [
+        {
+          "reason": "Ledger start.",
+          "span": {
+            "source": {
+              "project_id": "f68b8076-56d4-52a6-be0d-50f36113ad69",
+              "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+              "branch_id": "c2c20280-e284-52f6-b8f5-9872de3af6da",
+              "logical_id": "scene-1",
+              "kind": "manuscript_scene",
+              "version_id": "529a4c49-6a35-5044-94a7-dd5df8eaf4a6"
+            },
+            "start": 495,
+            "end": 549,
+            "content_sha256": "073b8ae563e905c9198518de578150c4fe8be7da37cd01ce081ecfbe80ea65c0"
+          }
+        },
+        {
+          "reason": "Debit event.",
+          "span": {
+            "source": {
+              "project_id": "f68b8076-56d4-52a6-be0d-50f36113ad69",
+              "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+              "branch_id": "c2c20280-e284-52f6-b8f5-9872de3af6da",
+              "logical_id": "scene-2",
+              "kind": "manuscript_scene",
+              "version_id": "197c3346-4da0-5919-b050-a6a56598f0c1"
+            },
+            "start": 171,
+            "end": 206,
+            "content_sha256": "11ef61a079261fb664fed0ef6beabff55072a6732aea0042ecd835d991ae01ca"
+          }
+        },
+        {
+          "reason": "Post-purchase balance.",
+          "span": {
+            "source": {
+              "project_id": "f68b8076-56d4-52a6-be0d-50f36113ad69",
+              "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+              "branch_id": "c2c20280-e284-52f6-b8f5-9872de3af6da",
+              "logical_id": "scene-2",
+              "kind": "manuscript_scene",
+              "version_id": "197c3346-4da0-5919-b050-a6a56598f0c1"
+            },
+            "start": 467,
+            "end": 521,
+            "content_sha256": "2ee9b00d6906d547bfa44a760fd994939e2065ea6bc5096ef1cc63094491190f"
+          }
+        },
+        {
+          "reason": "Debit event.",
+          "span": {
+            "source": {
+              "project_id": "f68b8076-56d4-52a6-be0d-50f36113ad69",
+              "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+              "branch_id": "c2c20280-e284-52f6-b8f5-9872de3af6da",
+              "logical_id": "scene-3",
+              "kind": "manuscript_scene",
+              "version_id": "b4fd135c-f9c1-5397-b7fe-96e466be0add"
+            },
+            "start": 72,
+            "end": 101,
+            "content_sha256": "75899bcb1e5630192149bee381a2bb73ff0c267095f4594b50889a43ce55a31b"
+          }
+        },
+        {
+          "reason": "Defective balance; must be packed with the events.",
+          "span": {
+            "source": {
+              "project_id": "f68b8076-56d4-52a6-be0d-50f36113ad69",
+              "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+              "branch_id": "c2c20280-e284-52f6-b8f5-9872de3af6da",
+              "logical_id": "scene-3",
+              "kind": "manuscript_scene",
+              "version_id": "b4fd135c-f9c1-5397-b7fe-96e466be0add"
+            },
+            "start": 457,
+            "end": 511,
+            "content_sha256": "89de3d3b99c7f7b2cf5e3c3c903835c5e6eeca0b796f5075eeab455523a13e88"
+          }
+        }
+      ],
+      "forbidden": [],
+      "notes": "Numeric audit: every balance plus every intervening debit/credit event is mandatory."
+    },
+    {
+      "query": {
+        "meta": {
+          "schema_version": "1.0.0",
+          "artifact_id": "75ffc8ec-41aa-574f-9e98-1d39e0240631",
+          "artifact_kind": "context_query",
+          "created_at": "2026-08-12T00:00:00Z",
+          "actor": "fixture-builder",
+          "tool": {
+            "name": "litharness-contracts-fixtures",
+            "version": "0.1.0"
+          },
+          "source_revisions": [
+            {
+              "project_id": "f68b8076-56d4-52a6-be0d-50f36113ad69",
+              "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+              "branch_id": "c2c20280-e284-52f6-b8f5-9872de3af6da",
+              "logical_id": "book",
+              "kind": "manuscript_book",
+              "version_id": "cfb8482a-e846-59f0-a319-35c852c8ae8a"
+            }
+          ],
+          "dependencies": [],
+          "warnings": []
+        },
+        "query_id": "q2-repair-hp",
+        "operation": "repair",
+        "target": {
+          "project_id": "f68b8076-56d4-52a6-be0d-50f36113ad69",
+          "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+          "branch_id": "c2c20280-e284-52f6-b8f5-9872de3af6da",
+          "logical_id": "scene-4",
+          "kind": "manuscript_scene",
+          "version_id": "7907ede4-bd50-5b05-a151-b5bf0e7b4ceb"
+        },
+        "token_budget": 1500,
+        "intent": "Repair finding f-hp-over-max with minimal context.",
+        "referenced_entities": [],
+        "referenced_threads": [],
+        "hard_requirements": [],
+        "exclusions": [],
+        "policy_version": "gold.v1"
+      },
+      "mandatory": [
+        {
+          "reason": "Manifestation span.",
+          "span": {
+            "source": {
+              "project_id": "f68b8076-56d4-52a6-be0d-50f36113ad69",
+              "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+              "branch_id": "c2c20280-e284-52f6-b8f5-9872de3af6da",
+              "logical_id": "scene-4",
+              "kind": "manuscript_scene",
+              "version_id": "7907ede4-bd50-5b05-a151-b5bf0e7b4ceb"
+            },
+            "start": 580,
+            "end": 634,
+            "content_sha256": "0159f224113f811bb3b4a73c1a6a6596ce4f2346134781db98978eba9d5ba95f"
+          }
+        },
+        {
+          "reason": "The locked rule being violated.",
+          "span": {
+            "source": {
+              "project_id": "f68b8076-56d4-52a6-be0d-50f36113ad69",
+              "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+              "branch_id": "c2c20280-e284-52f6-b8f5-9872de3af6da",
+              "logical_id": "scene-1",
+              "kind": "manuscript_scene",
+              "version_id": "529a4c49-6a35-5044-94a7-dd5df8eaf4a6"
+            },
+            "start": 288,
+            "end": 343,
+            "content_sha256": "a1d07ca5bb07ec025c71f8877a71a46d98271a7af8663464035f4363926bec5a"
+          }
+        },
+        {
+          "reason": "Cause of the heal.",
+          "ref": {
+            "project_id": "f68b8076-56d4-52a6-be0d-50f36113ad69",
+            "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+            "branch_id": "c2c20280-e284-52f6-b8f5-9872de3af6da",
+            "logical_id": "rec-ev-potion",
+            "kind": "state_event"
+          }
+        }
+      ],
+      "forbidden": [],
+      "notes": "Bounded repair: only the status line needs to change; prose around it is preserve-scope."
+    }
+  ]
+}

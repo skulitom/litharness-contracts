@@ -1,0 +1,602 @@
+{
+  "meta": {
+    "schema_version": "1.0.0",
+    "artifact_id": "7fb3e0b0-8bac-57b0-9350-38c7f4b58885",
+    "artifact_kind": "evaluation_artifact",
+    "created_at": "2026-08-12T00:00:00Z",
+    "actor": "fixture-builder",
+    "tool": {
+      "name": "litharness-contracts-fixtures",
+      "version": "0.1.0"
+    },
+    "source_revisions": [
+      {
+        "project_id": "f68b8076-56d4-52a6-be0d-50f36113ad69",
+        "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+        "branch_id": "c2c20280-e284-52f6-b8f5-9872de3af6da",
+        "logical_id": "book",
+        "kind": "manuscript_book",
+        "version_id": "cfb8482a-e846-59f0-a319-35c852c8ae8a"
+      }
+    ],
+    "dependencies": [],
+    "warnings": []
+  },
+  "run_id": "gold",
+  "plan_id": "gold-annotations",
+  "findings": [
+    {
+      "finding_id": "f-gold-ledger",
+      "category": "world_rule",
+      "status": "open",
+      "scope": {
+        "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+        "chapter_ids": [],
+        "scene_ids": [
+          "scene-2",
+          "scene-3"
+        ]
+      },
+      "severity": "major",
+      "message": "Gold 25 minus a 5-gold toll should be 20; the scene-3 status block shows 15.",
+      "evaluation_run_id": "gold",
+      "subtype": "resource_conservation",
+      "primary_span": {
+        "source": {
+          "project_id": "f68b8076-56d4-52a6-be0d-50f36113ad69",
+          "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+          "branch_id": "c2c20280-e284-52f6-b8f5-9872de3af6da",
+          "logical_id": "scene-3",
+          "kind": "manuscript_scene",
+          "version_id": "b4fd135c-f9c1-5397-b7fe-96e466be0add"
+        },
+        "start": 457,
+        "end": 511,
+        "content_sha256": "89de3d3b99c7f7b2cf5e3c3c903835c5e6eeca0b796f5075eeab455523a13e88"
+      },
+      "supporting_evidence": [
+        {
+          "source": {
+            "project_id": "f68b8076-56d4-52a6-be0d-50f36113ad69",
+            "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+            "branch_id": "c2c20280-e284-52f6-b8f5-9872de3af6da",
+            "logical_id": "scene-2",
+            "kind": "manuscript_scene",
+            "version_id": "197c3346-4da0-5919-b050-a6a56598f0c1"
+          },
+          "start": 467,
+          "end": 521,
+          "content_sha256": "2ee9b00d6906d547bfa44a760fd994939e2065ea6bc5096ef1cc63094491190f"
+        },
+        {
+          "source": {
+            "project_id": "f68b8076-56d4-52a6-be0d-50f36113ad69",
+            "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+            "branch_id": "c2c20280-e284-52f6-b8f5-9872de3af6da",
+            "logical_id": "scene-3",
+            "kind": "manuscript_scene",
+            "version_id": "b4fd135c-f9c1-5397-b7fe-96e466be0add"
+          },
+          "start": 72,
+          "end": 101,
+          "content_sha256": "75899bcb1e5630192149bee381a2bb73ff0c267095f4594b50889a43ce55a31b"
+        }
+      ],
+      "contradicting_evidence": [],
+      "rule_or_critic_id": "ledger.gold.v0",
+      "confidence": 1.0,
+      "confidence_basis": "deterministic",
+      "evidence_confidence": 1.0,
+      "claim": {
+        "resource": "gold",
+        "expected": 20,
+        "observed": 15,
+        "arithmetic": "25 - 5"
+      },
+      "reproduction": {
+        "config_hash": "fixture",
+        "policy_version": "gold.v1"
+      },
+      "dependencies": [],
+      "suggested_action": "inspect"
+    },
+    {
+      "finding_id": "f-skill-before-acq",
+      "category": "causality",
+      "status": "open",
+      "scope": {
+        "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+        "chapter_ids": [],
+        "scene_ids": [
+          "scene-3",
+          "scene-5"
+        ]
+      },
+      "severity": "major",
+      "message": "Shadowstep is used in scene 3 but acquired in scene 5.",
+      "evaluation_run_id": "gold",
+      "subtype": "use_before_acquisition",
+      "primary_span": {
+        "source": {
+          "project_id": "f68b8076-56d4-52a6-be0d-50f36113ad69",
+          "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+          "branch_id": "c2c20280-e284-52f6-b8f5-9872de3af6da",
+          "logical_id": "scene-3",
+          "kind": "manuscript_scene",
+          "version_id": "b4fd135c-f9c1-5397-b7fe-96e466be0add"
+        },
+        "start": 353,
+        "end": 400,
+        "content_sha256": "84be6e08740079fb2b367b9a0810360e916cf22732532d4f4ff93b81f3e6a766"
+      },
+      "supporting_evidence": [
+        {
+          "source": {
+            "project_id": "f68b8076-56d4-52a6-be0d-50f36113ad69",
+            "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+            "branch_id": "c2c20280-e284-52f6-b8f5-9872de3af6da",
+            "logical_id": "scene-5",
+            "kind": "manuscript_scene",
+            "version_id": "0bf462be-73fb-5bfe-9ef9-57a7e059057e"
+          },
+          "start": 178,
+          "end": 208,
+          "content_sha256": "bc5b8b7394eb36f948205642ca478034dc3fee16d35107002f5cb1ba9699864c"
+        },
+        {
+          "source": {
+            "project_id": "f68b8076-56d4-52a6-be0d-50f36113ad69",
+            "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+            "branch_id": "c2c20280-e284-52f6-b8f5-9872de3af6da",
+            "logical_id": "scene-3",
+            "kind": "manuscript_scene",
+            "version_id": "b4fd135c-f9c1-5397-b7fe-96e466be0add"
+          },
+          "start": 572,
+          "end": 593,
+          "content_sha256": "0742d28f189af133df06fed4a0c46331ca35db39cbe81f74c8d4b36dabf40272"
+        }
+      ],
+      "contradicting_evidence": [],
+      "rule_or_critic_id": "causality.acquisition.v0",
+      "confidence": 1.0,
+      "confidence_basis": "deterministic",
+      "evidence_confidence": 1.0,
+      "claim": {
+        "skill": "shadowstep",
+        "used_at": "s3",
+        "acquired_at": "s5"
+      },
+      "reproduction": {
+        "config_hash": "fixture",
+        "policy_version": "gold.v1"
+      },
+      "dependencies": [],
+      "suggested_action": "inspect"
+    },
+    {
+      "finding_id": "f-hp-over-max",
+      "category": "world_rule",
+      "status": "open",
+      "scope": {
+        "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+        "chapter_ids": [],
+        "scene_ids": [
+          "scene-1",
+          "scene-4"
+        ]
+      },
+      "severity": "major",
+      "message": "HP 34/30 violates the locked ceiling rule; no max-HP increase event exists.",
+      "evaluation_run_id": "gold",
+      "subtype": "stat_ceiling",
+      "primary_span": {
+        "source": {
+          "project_id": "f68b8076-56d4-52a6-be0d-50f36113ad69",
+          "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+          "branch_id": "c2c20280-e284-52f6-b8f5-9872de3af6da",
+          "logical_id": "scene-4",
+          "kind": "manuscript_scene",
+          "version_id": "7907ede4-bd50-5b05-a151-b5bf0e7b4ceb"
+        },
+        "start": 580,
+        "end": 634,
+        "content_sha256": "0159f224113f811bb3b4a73c1a6a6596ce4f2346134781db98978eba9d5ba95f"
+      },
+      "supporting_evidence": [
+        {
+          "source": {
+            "project_id": "f68b8076-56d4-52a6-be0d-50f36113ad69",
+            "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+            "branch_id": "c2c20280-e284-52f6-b8f5-9872de3af6da",
+            "logical_id": "scene-1",
+            "kind": "manuscript_scene",
+            "version_id": "529a4c49-6a35-5044-94a7-dd5df8eaf4a6"
+          },
+          "start": 288,
+          "end": 343,
+          "content_sha256": "a1d07ca5bb07ec025c71f8877a71a46d98271a7af8663464035f4363926bec5a"
+        },
+        {
+          "source": {
+            "project_id": "f68b8076-56d4-52a6-be0d-50f36113ad69",
+            "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+            "branch_id": "c2c20280-e284-52f6-b8f5-9872de3af6da",
+            "logical_id": "scene-4",
+            "kind": "manuscript_scene",
+            "version_id": "7907ede4-bd50-5b05-a151-b5bf0e7b4ceb"
+          },
+          "start": 253,
+          "end": 286,
+          "content_sha256": "b762997a24d01e22fb8af5639e3fd88a5db91953d1093a8ab8f7d6d5c8732793"
+        }
+      ],
+      "contradicting_evidence": [],
+      "rule_or_critic_id": "stats.ceiling.v0",
+      "confidence": 1.0,
+      "confidence_basis": "deterministic",
+      "evidence_confidence": 1.0,
+      "claim": {
+        "stat": "hp",
+        "observed": 34,
+        "max": 30
+      },
+      "reproduction": {
+        "config_hash": "fixture",
+        "policy_version": "gold.v1"
+      },
+      "dependencies": [
+        {
+          "project_id": "f68b8076-56d4-52a6-be0d-50f36113ad69",
+          "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+          "branch_id": "c2c20280-e284-52f6-b8f5-9872de3af6da",
+          "logical_id": "rec-rule-hp-ceiling",
+          "kind": "world_rule"
+        }
+      ],
+      "suggested_action": "inspect"
+    },
+    {
+      "finding_id": "f-level-regression",
+      "category": "physical_state",
+      "status": "open",
+      "scope": {
+        "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+        "chapter_ids": [],
+        "scene_ids": [
+          "scene-1",
+          "scene-4",
+          "scene-5"
+        ]
+      },
+      "severity": "critical",
+      "message": "Level 4 in scene 4 becomes Level 3 in scene 5 with no death event.",
+      "evaluation_run_id": "gold",
+      "subtype": "level_regression",
+      "primary_span": {
+        "source": {
+          "project_id": "f68b8076-56d4-52a6-be0d-50f36113ad69",
+          "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+          "branch_id": "c2c20280-e284-52f6-b8f5-9872de3af6da",
+          "logical_id": "scene-5",
+          "kind": "manuscript_scene",
+          "version_id": "0bf462be-73fb-5bfe-9ef9-57a7e059057e"
+        },
+        "start": 381,
+        "end": 435,
+        "content_sha256": "75ccba3c8dd30b82331206537accc78316cf28e7df3420b564d21899e8c77ee2"
+      },
+      "supporting_evidence": [
+        {
+          "source": {
+            "project_id": "f68b8076-56d4-52a6-be0d-50f36113ad69",
+            "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+            "branch_id": "c2c20280-e284-52f6-b8f5-9872de3af6da",
+            "logical_id": "scene-4",
+            "kind": "manuscript_scene",
+            "version_id": "7907ede4-bd50-5b05-a151-b5bf0e7b4ceb"
+          },
+          "start": 340,
+          "end": 366,
+          "content_sha256": "dab19017f1e68f7375ea9e52cbca7779920e8982a151186a1a6f264aa399c0fb"
+        },
+        {
+          "source": {
+            "project_id": "f68b8076-56d4-52a6-be0d-50f36113ad69",
+            "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+            "branch_id": "c2c20280-e284-52f6-b8f5-9872de3af6da",
+            "logical_id": "scene-1",
+            "kind": "manuscript_scene",
+            "version_id": "529a4c49-6a35-5044-94a7-dd5df8eaf4a6"
+          },
+          "start": 389,
+          "end": 441,
+          "content_sha256": "edaf20b023b6e62f93e5f5a6eb1e1ad30ded46f8fd26d1c4ca4d3e581be673ee"
+        }
+      ],
+      "contradicting_evidence": [],
+      "rule_or_critic_id": "stats.level_monotonic.v0",
+      "confidence": 1.0,
+      "confidence_basis": "deterministic",
+      "evidence_confidence": 1.0,
+      "claim": {
+        "stat": "level",
+        "before": 4,
+        "after": 3,
+        "death_event": false
+      },
+      "reproduction": {
+        "config_hash": "fixture",
+        "policy_version": "gold.v1"
+      },
+      "dependencies": [
+        {
+          "project_id": "f68b8076-56d4-52a6-be0d-50f36113ad69",
+          "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+          "branch_id": "c2c20280-e284-52f6-b8f5-9872de3af6da",
+          "logical_id": "rec-rule-level-monotonic",
+          "kind": "world_rule"
+        }
+      ],
+      "suggested_action": "inspect"
+    },
+    {
+      "finding_id": "f-quest-early-complete",
+      "category": "promise_payoff",
+      "status": "open",
+      "scope": {
+        "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+        "chapter_ids": [],
+        "scene_ids": [
+          "scene-5",
+          "scene-6"
+        ]
+      },
+      "severity": "major",
+      "message": "The quest is marked completed in scene 5, one scene before the completion event fires.",
+      "evaluation_run_id": "gold",
+      "subtype": "thread_state",
+      "primary_span": {
+        "source": {
+          "project_id": "f68b8076-56d4-52a6-be0d-50f36113ad69",
+          "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+          "branch_id": "c2c20280-e284-52f6-b8f5-9872de3af6da",
+          "logical_id": "scene-5",
+          "kind": "manuscript_scene",
+          "version_id": "0bf462be-73fb-5bfe-9ef9-57a7e059057e"
+        },
+        "start": 541,
+        "end": 575,
+        "content_sha256": "0f433509fa27eb94cde99739010cc56fbaa191a823cf802c6301aa612f828cfb"
+      },
+      "supporting_evidence": [
+        {
+          "source": {
+            "project_id": "f68b8076-56d4-52a6-be0d-50f36113ad69",
+            "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+            "branch_id": "c2c20280-e284-52f6-b8f5-9872de3af6da",
+            "logical_id": "scene-6",
+            "kind": "manuscript_scene",
+            "version_id": "90125004-cbbb-51e6-b13d-742508b41858"
+          },
+          "start": 305,
+          "end": 354,
+          "content_sha256": "1f1dac0070fbbae6d1acc367406595f03d3cbd83ee18ff2510f90a90e38e543e"
+        }
+      ],
+      "contradicting_evidence": [],
+      "rule_or_critic_id": "thread.transition.v0",
+      "confidence": 1.0,
+      "confidence_basis": "deterministic",
+      "evidence_confidence": 1.0,
+      "claim": {
+        "thread": "quest_toll_gate",
+        "marked_completed_at": "s5",
+        "completion_event_at": "s6"
+      },
+      "reproduction": {
+        "config_hash": "fixture",
+        "policy_version": "gold.v1"
+      },
+      "dependencies": [],
+      "suggested_action": "inspect"
+    },
+    {
+      "finding_id": "f-silver-key-ghost",
+      "category": "inventory",
+      "status": "open",
+      "scope": {
+        "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+        "chapter_ids": [],
+        "scene_ids": [
+          "scene-4"
+        ]
+      },
+      "severity": "major",
+      "message": "The silver key is used but never acquired; it does not appear in any inventory block.",
+      "evaluation_run_id": "gold",
+      "subtype": "ghost_item",
+      "primary_span": {
+        "source": {
+          "project_id": "f68b8076-56d4-52a6-be0d-50f36113ad69",
+          "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+          "branch_id": "c2c20280-e284-52f6-b8f5-9872de3af6da",
+          "logical_id": "scene-4",
+          "kind": "manuscript_scene",
+          "version_id": "7907ede4-bd50-5b05-a151-b5bf0e7b4ceb"
+        },
+        "start": 505,
+        "end": 548,
+        "content_sha256": "2e3067b2b94b7ad57e6fb69f1264e85b40051031a0f65eaef44663c2f50601ad"
+      },
+      "supporting_evidence": [
+        {
+          "source": {
+            "project_id": "f68b8076-56d4-52a6-be0d-50f36113ad69",
+            "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+            "branch_id": "c2c20280-e284-52f6-b8f5-9872de3af6da",
+            "logical_id": "scene-4",
+            "kind": "manuscript_scene",
+            "version_id": "7907ede4-bd50-5b05-a151-b5bf0e7b4ceb"
+          },
+          "start": 635,
+          "end": 714,
+          "content_sha256": "6f04dd60bab7998ad90bfcc49ac1ef2decd7ab64373e48a8fda14fa632331479"
+        }
+      ],
+      "contradicting_evidence": [],
+      "rule_or_critic_id": "inventory.ghost.v0",
+      "confidence": 1.0,
+      "confidence_basis": "deterministic",
+      "evidence_confidence": 1.0,
+      "claim": {
+        "item": "silver_key",
+        "acquisition_event": false
+      },
+      "reproduction": {
+        "config_hash": "fixture",
+        "policy_version": "gold.v1"
+      },
+      "dependencies": [],
+      "suggested_action": "inspect"
+    },
+    {
+      "finding_id": "f-control-flavor",
+      "category": "style",
+      "status": "accepted_intentional",
+      "scope": {
+        "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+        "chapter_ids": [],
+        "scene_ids": [
+          "scene-2"
+        ]
+      },
+      "severity": "info",
+      "message": "System flavor text with no stat change is intentional color. Negative control.",
+      "evaluation_run_id": "gold",
+      "subtype": "unreliable_system_text",
+      "primary_span": {
+        "source": {
+          "project_id": "f68b8076-56d4-52a6-be0d-50f36113ad69",
+          "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+          "branch_id": "c2c20280-e284-52f6-b8f5-9872de3af6da",
+          "logical_id": "scene-2",
+          "kind": "manuscript_scene",
+          "version_id": "197c3346-4da0-5919-b050-a6a56598f0c1"
+        },
+        "start": 377,
+        "end": 394,
+        "content_sha256": "c78aa42c4beee44ea0bc147d3437db800a13b8528e6b8e8e9eaf83dbde82786e"
+      },
+      "supporting_evidence": [
+        {
+          "source": {
+            "project_id": "f68b8076-56d4-52a6-be0d-50f36113ad69",
+            "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+            "branch_id": "c2c20280-e284-52f6-b8f5-9872de3af6da",
+            "logical_id": "scene-2",
+            "kind": "manuscript_scene",
+            "version_id": "197c3346-4da0-5919-b050-a6a56598f0c1"
+          },
+          "start": 436,
+          "end": 464,
+          "content_sha256": "178fccaa3b4baaff4ed0a2f9b68b7f07d37745e37d43594ce50c148c461fb910"
+        }
+      ],
+      "contradicting_evidence": [],
+      "rule_or_critic_id": "style.flavor.v0",
+      "confidence": 1.0,
+      "confidence_basis": "deterministic",
+      "evidence_confidence": 1.0,
+      "claim": {
+        "text": "You feel stronger",
+        "stat_change": false,
+        "intentional": true
+      },
+      "reproduction": {
+        "config_hash": "fixture",
+        "policy_version": "gold.v1"
+      },
+      "dependencies": [
+        {
+          "project_id": "f68b8076-56d4-52a6-be0d-50f36113ad69",
+          "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+          "branch_id": "c2c20280-e284-52f6-b8f5-9872de3af6da",
+          "logical_id": "plan-flavor",
+          "kind": "plan"
+        }
+      ],
+      "suggested_action": "dismiss"
+    },
+    {
+      "finding_id": "f-control-status-repetition",
+      "category": "repetition",
+      "status": "accepted_intentional",
+      "scope": {
+        "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+        "chapter_ids": [],
+        "scene_ids": [
+          "scene-1",
+          "scene-6"
+        ]
+      },
+      "severity": "info",
+      "message": "The status block format repeats every scene by design. Negative control.",
+      "evaluation_run_id": "gold",
+      "subtype": "intentional_format",
+      "primary_span": {
+        "source": {
+          "project_id": "f68b8076-56d4-52a6-be0d-50f36113ad69",
+          "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+          "branch_id": "c2c20280-e284-52f6-b8f5-9872de3af6da",
+          "logical_id": "scene-6",
+          "kind": "manuscript_scene",
+          "version_id": "90125004-cbbb-51e6-b13d-742508b41858"
+        },
+        "start": 458,
+        "end": 511,
+        "content_sha256": "db847d699d69703346914e8ac12accb3f100843d819fc19159634052908a873f"
+      },
+      "supporting_evidence": [
+        {
+          "source": {
+            "project_id": "f68b8076-56d4-52a6-be0d-50f36113ad69",
+            "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+            "branch_id": "c2c20280-e284-52f6-b8f5-9872de3af6da",
+            "logical_id": "scene-1",
+            "kind": "manuscript_scene",
+            "version_id": "529a4c49-6a35-5044-94a7-dd5df8eaf4a6"
+          },
+          "start": 495,
+          "end": 549,
+          "content_sha256": "073b8ae563e905c9198518de578150c4fe8be7da37cd01ce081ecfbe80ea65c0"
+        }
+      ],
+      "contradicting_evidence": [],
+      "rule_or_critic_id": "repetition.format.v0",
+      "confidence": 1.0,
+      "confidence_basis": "deterministic",
+      "evidence_confidence": 1.0,
+      "claim": {
+        "format": "status_block",
+        "intentional": true
+      },
+      "reproduction": {
+        "config_hash": "fixture",
+        "policy_version": "gold.v1"
+      },
+      "dependencies": [
+        {
+          "project_id": "f68b8076-56d4-52a6-be0d-50f36113ad69",
+          "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+          "branch_id": "c2c20280-e284-52f6-b8f5-9872de3af6da",
+          "logical_id": "plan-status-format",
+          "kind": "plan"
+        }
+      ],
+      "suggested_action": "dismiss"
+    }
+  ],
+  "errors": [],
+  "metrics": {}
+}

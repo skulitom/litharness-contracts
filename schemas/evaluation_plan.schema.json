@@ -1,0 +1,264 @@
+{
+  "$defs": {
+    "ArtifactMeta": {
+      "additionalProperties": true,
+      "properties": {
+        "actor": {
+          "type": "string"
+        },
+        "artifact_id": {
+          "type": "string"
+        },
+        "artifact_kind": {
+          "type": "string"
+        },
+        "causation_id": {
+          "type": "string"
+        },
+        "config_digest": {
+          "type": "string"
+        },
+        "correlation_id": {
+          "type": "string"
+        },
+        "created_at": {
+          "type": "string"
+        },
+        "dependencies": {
+          "items": {
+            "$ref": "#/$defs/ResourceRef"
+          },
+          "type": "array"
+        },
+        "schema_version": {
+          "type": "string"
+        },
+        "source_revisions": {
+          "items": {
+            "$ref": "#/$defs/ResourceRef"
+          },
+          "type": "array"
+        },
+        "tool": {
+          "$ref": "#/$defs/ToolIdentity"
+        },
+        "warnings": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "schema_version",
+        "artifact_id",
+        "artifact_kind",
+        "created_at",
+        "actor",
+        "tool"
+      ],
+      "type": "object"
+    },
+    "CriticSpec": {
+      "additionalProperties": true,
+      "properties": {
+        "critic_id": {
+          "type": "string"
+        },
+        "model": {
+          "$ref": "#/$defs/ModelIdentifier"
+        }
+      },
+      "required": [
+        "critic_id"
+      ],
+      "type": "object"
+    },
+    "DetectorSpec": {
+      "additionalProperties": true,
+      "properties": {
+        "detector_id": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "detector_id",
+        "version"
+      ],
+      "type": "object"
+    },
+    "FindingCategory": {
+      "enum": [
+        "timeline",
+        "knowledge",
+        "physical_state",
+        "inventory",
+        "relationship",
+        "location",
+        "causality",
+        "promise_payoff",
+        "world_rule",
+        "style",
+        "repetition",
+        "pacing",
+        "unknown"
+      ],
+      "type": "string"
+    },
+    "ModelIdentifier": {
+      "additionalProperties": true,
+      "properties": {
+        "model": {
+          "type": "string"
+        },
+        "provider": {
+          "type": "string"
+        },
+        "request_profile": {
+          "type": "string"
+        },
+        "template_version": {
+          "type": "string"
+        },
+        "version_or_digest": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "provider",
+        "model"
+      ],
+      "type": "object"
+    },
+    "ResourceKind": {
+      "enum": [
+        "manuscript_book",
+        "manuscript_part",
+        "manuscript_chapter",
+        "manuscript_scene",
+        "manuscript_block",
+        "plan",
+        "entity",
+        "assertion",
+        "state_event",
+        "relationship",
+        "knowledge",
+        "thread",
+        "world_rule",
+        "summary",
+        "embedding",
+        "context_packet",
+        "finding",
+        "graph_node",
+        "generation_candidate",
+        "revision_plan",
+        "export_artifact",
+        "job",
+        "unknown"
+      ],
+      "type": "string"
+    },
+    "ResourceRef": {
+      "additionalProperties": true,
+      "properties": {
+        "book_id": {
+          "type": "string"
+        },
+        "branch_id": {
+          "type": "string"
+        },
+        "kind": {
+          "$ref": "#/$defs/ResourceKind"
+        },
+        "logical_id": {
+          "type": "string"
+        },
+        "project_id": {
+          "type": "string"
+        },
+        "version_id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "project_id",
+        "book_id",
+        "branch_id",
+        "logical_id",
+        "kind"
+      ],
+      "type": "object"
+    },
+    "ToolIdentity": {
+      "additionalProperties": true,
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "version"
+      ],
+      "type": "object"
+    }
+  },
+  "$id": "https://litharness.dev/schemas/evaluation_plan.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "categories": {
+      "items": {
+        "$ref": "#/$defs/FindingCategory"
+      },
+      "type": "array"
+    },
+    "context_packet_id": {
+      "type": "string"
+    },
+    "critics": {
+      "items": {
+        "$ref": "#/$defs/CriticSpec"
+      },
+      "type": "array"
+    },
+    "detectors": {
+      "items": {
+        "$ref": "#/$defs/DetectorSpec"
+      },
+      "type": "array"
+    },
+    "manuscript_revision": {
+      "$ref": "#/$defs/ResourceRef"
+    },
+    "meta": {
+      "$ref": "#/$defs/ArtifactMeta"
+    },
+    "plan_id": {
+      "type": "string"
+    },
+    "seed": {
+      "type": "integer"
+    },
+    "state_snapshot": {
+      "$ref": "#/$defs/ResourceRef"
+    },
+    "thresholds_profile": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "meta",
+    "plan_id",
+    "manuscript_revision",
+    "detectors"
+  ],
+  "title": "EvaluationPlan",
+  "type": "object"
+}

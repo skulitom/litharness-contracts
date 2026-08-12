@@ -1,0 +1,187 @@
+{
+  "$defs": {
+    "ArtifactMeta": {
+      "additionalProperties": true,
+      "properties": {
+        "actor": {
+          "type": "string"
+        },
+        "artifact_id": {
+          "type": "string"
+        },
+        "artifact_kind": {
+          "type": "string"
+        },
+        "causation_id": {
+          "type": "string"
+        },
+        "config_digest": {
+          "type": "string"
+        },
+        "correlation_id": {
+          "type": "string"
+        },
+        "created_at": {
+          "type": "string"
+        },
+        "dependencies": {
+          "items": {
+            "$ref": "#/$defs/ResourceRef"
+          },
+          "type": "array"
+        },
+        "schema_version": {
+          "type": "string"
+        },
+        "source_revisions": {
+          "items": {
+            "$ref": "#/$defs/ResourceRef"
+          },
+          "type": "array"
+        },
+        "tool": {
+          "$ref": "#/$defs/ToolIdentity"
+        },
+        "warnings": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "schema_version",
+        "artifact_id",
+        "artifact_kind",
+        "created_at",
+        "actor",
+        "tool"
+      ],
+      "type": "object"
+    },
+    "JobStatus": {
+      "enum": [
+        "queued",
+        "running",
+        "succeeded",
+        "failed",
+        "cancelled",
+        "poisoned",
+        "unknown"
+      ],
+      "type": "string"
+    },
+    "ResourceKind": {
+      "enum": [
+        "manuscript_book",
+        "manuscript_part",
+        "manuscript_chapter",
+        "manuscript_scene",
+        "manuscript_block",
+        "plan",
+        "entity",
+        "assertion",
+        "state_event",
+        "relationship",
+        "knowledge",
+        "thread",
+        "world_rule",
+        "summary",
+        "embedding",
+        "context_packet",
+        "finding",
+        "graph_node",
+        "generation_candidate",
+        "revision_plan",
+        "export_artifact",
+        "job",
+        "unknown"
+      ],
+      "type": "string"
+    },
+    "ResourceRef": {
+      "additionalProperties": true,
+      "properties": {
+        "book_id": {
+          "type": "string"
+        },
+        "branch_id": {
+          "type": "string"
+        },
+        "kind": {
+          "$ref": "#/$defs/ResourceKind"
+        },
+        "logical_id": {
+          "type": "string"
+        },
+        "project_id": {
+          "type": "string"
+        },
+        "version_id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "project_id",
+        "book_id",
+        "branch_id",
+        "logical_id",
+        "kind"
+      ],
+      "type": "object"
+    },
+    "ToolIdentity": {
+      "additionalProperties": true,
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "version"
+      ],
+      "type": "object"
+    }
+  },
+  "$id": "https://litharness.dev/schemas/job_record.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "attempts": {
+      "type": "integer"
+    },
+    "error": {
+      "type": "string"
+    },
+    "idempotency_key": {
+      "type": "string"
+    },
+    "input_digest": {
+      "type": "string"
+    },
+    "job_id": {
+      "type": "string"
+    },
+    "job_kind": {
+      "type": "string"
+    },
+    "meta": {
+      "$ref": "#/$defs/ArtifactMeta"
+    },
+    "status": {
+      "$ref": "#/$defs/JobStatus"
+    }
+  },
+  "required": [
+    "meta",
+    "job_id",
+    "job_kind",
+    "status"
+  ],
+  "title": "JobRecord",
+  "type": "object"
+}

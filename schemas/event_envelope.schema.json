@@ -1,0 +1,86 @@
+{
+  "$defs": {
+    "EventType": {
+      "enum": [
+        "PlanChanged",
+        "ManuscriptCandidateCreated",
+        "ManuscriptRevisionAccepted",
+        "StateCandidatesExtracted",
+        "StateRecordsAccepted",
+        "ContextPacketCreated",
+        "EvaluationCompleted",
+        "FindingStatusChanged",
+        "ImpactAnalyzed",
+        "RevisionPlanApproved",
+        "ArtifactInvalidated",
+        "ArtifactRecomputed",
+        "ExportCreated",
+        "JobFailed",
+        "unknown"
+      ],
+      "type": "string"
+    }
+  },
+  "$id": "https://litharness.dev/schemas/event_envelope.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "actor": {
+      "type": "string"
+    },
+    "book_id": {
+      "type": "string"
+    },
+    "branch_id": {
+      "type": "string"
+    },
+    "causation_id": {
+      "type": "string"
+    },
+    "correlation_id": {
+      "type": "string"
+    },
+    "created_at": {
+      "type": "string"
+    },
+    "event_id": {
+      "type": "string"
+    },
+    "event_type": {
+      "$ref": "#/$defs/EventType"
+    },
+    "expected_version": {
+      "type": "string"
+    },
+    "idempotency_key": {
+      "type": "string"
+    },
+    "payload": {
+      "additionalProperties": {},
+      "type": "object"
+    },
+    "payload_digest": {
+      "type": "string"
+    },
+    "project_id": {
+      "type": "string"
+    },
+    "revision_id": {
+      "type": "string"
+    },
+    "schema_version": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema_version",
+    "event_id",
+    "event_type",
+    "created_at",
+    "actor",
+    "project_id",
+    "idempotency_key"
+  ],
+  "title": "EventEnvelope",
+  "type": "object"
+}

@@ -1,0 +1,226 @@
+{
+  "meta": {
+    "schema_version": "1.0.0",
+    "artifact_id": "fdaa9992-053f-525b-9a79-d498bf3ec87f",
+    "artifact_kind": "gold_impact_suite",
+    "created_at": "2026-08-12T00:00:00Z",
+    "actor": "fixture-builder",
+    "tool": {
+      "name": "litharness-contracts-fixtures",
+      "version": "0.1.0"
+    },
+    "source_revisions": [
+      {
+        "project_id": "f68b8076-56d4-52a6-be0d-50f36113ad69",
+        "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+        "branch_id": "c2c20280-e284-52f6-b8f5-9872de3af6da",
+        "logical_id": "book",
+        "kind": "manuscript_book",
+        "version_id": "cfb8482a-e846-59f0-a319-35c852c8ae8a"
+      }
+    ],
+    "dependencies": [],
+    "warnings": []
+  },
+  "fixture_id": "litrpg",
+  "cases": [
+    {
+      "scenario_id": "e1-lantern-price",
+      "description": "Change the storm lantern's price from twenty to twelve gold.",
+      "change_set": {
+        "meta": {
+          "schema_version": "1.0.0",
+          "artifact_id": "8173c1d7-78de-5025-a0b8-62efea52d06d",
+          "artifact_kind": "change_set",
+          "created_at": "2026-08-12T00:00:00Z",
+          "actor": "fixture-builder",
+          "tool": {
+            "name": "litharness-contracts-fixtures",
+            "version": "0.1.0"
+          },
+          "source_revisions": [
+            {
+              "project_id": "f68b8076-56d4-52a6-be0d-50f36113ad69",
+              "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+              "branch_id": "c2c20280-e284-52f6-b8f5-9872de3af6da",
+              "logical_id": "book",
+              "kind": "manuscript_book",
+              "version_id": "cfb8482a-e846-59f0-a319-35c852c8ae8a"
+            }
+          ],
+          "dependencies": [],
+          "warnings": []
+        },
+        "change_set_id": "8173c1d7-78de-5025-a0b8-62efea52d06d",
+        "base_revision": "cfb8482a-e846-59f0-a319-35c852c8ae8a",
+        "target_branch": "c2c20280-e284-52f6-b8f5-9872de3af6da",
+        "actor": "author",
+        "operations": [
+          {
+            "kind": "replace_span",
+            "logical_source_id": "scene-2",
+            "before_version": "197c3346-4da0-5919-b050-a6a56598f0c1",
+            "after_version": "bd80e485-7415-5e75-9071-74e056eed304",
+            "before_hash": "11ef61a079261fb664fed0ef6beabff55072a6732aea0042ecd835d991ae01ca",
+            "after_hash": "e64f5940629ebb5f3fdd04329b9ecb8dd94d2a9bfc286f248c4a8105c74b071b",
+            "detail": {
+              "quote": "counted twenty gold onto the barrel",
+              "new_text": "counted twelve gold onto the barrel"
+            }
+          },
+          {
+            "kind": "replace_span",
+            "logical_source_id": "scene-2",
+            "before_version": "197c3346-4da0-5919-b050-a6a56598f0c1",
+            "after_version": "bd80e485-7415-5e75-9071-74e056eed304",
+            "before_hash": "2ee9b00d6906d547bfa44a760fd994939e2065ea6bc5096ef1cc63094491190f",
+            "after_hash": "a782f62ddc29fae1eeaf2ef7f38938e598628b92354ef9cfcebef5f25049bac1",
+            "detail": {
+              "quote": "[STATUS] Rook — Level 3 | HP 24/30 | MP 8/10 | Gold 25",
+              "new_text": "[STATUS] Rook — Level 3 | HP 24/30 | MP 8/10 | Gold 33"
+            }
+          }
+        ],
+        "idempotency_key": "51c6572d-4dfa-5787-96a3-b81ee986704d",
+        "extracted_changes": [
+          {
+            "kind": "fact_changed",
+            "subject": "rook",
+            "predicate": "gold",
+            "before": 25,
+            "after": 33,
+            "evidence": [],
+            "confidence": 1.0
+          }
+        ],
+        "declared_intent": "Cheaper lantern; downstream gold arithmetic must follow.",
+        "preservation_constraints": []
+      },
+      "expected": [
+        {
+          "target": {
+            "project_id": "f68b8076-56d4-52a6-be0d-50f36113ad69",
+            "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+            "branch_id": "c2c20280-e284-52f6-b8f5-9872de3af6da",
+            "logical_id": "rec-ev-buy-lantern",
+            "kind": "state_event"
+          },
+          "label": "must_update",
+          "note": "Cost changes to 12."
+        },
+        {
+          "target": {
+            "project_id": "f68b8076-56d4-52a6-be0d-50f36113ad69",
+            "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+            "branch_id": "c2c20280-e284-52f6-b8f5-9872de3af6da",
+            "logical_id": "rec-s2-status",
+            "kind": "assertion"
+          },
+          "label": "must_update",
+          "note": "Balance becomes 33."
+        },
+        {
+          "target": {
+            "project_id": "f68b8076-56d4-52a6-be0d-50f36113ad69",
+            "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+            "branch_id": "c2c20280-e284-52f6-b8f5-9872de3af6da",
+            "logical_id": "scene-3",
+            "kind": "manuscript_scene",
+            "version_id": "b4fd135c-f9c1-5397-b7fe-96e466be0add"
+          },
+          "label": "must_update",
+          "note": "Downstream balance in the status block."
+        },
+        {
+          "target": {
+            "project_id": "f68b8076-56d4-52a6-be0d-50f36113ad69",
+            "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+            "branch_id": "c2c20280-e284-52f6-b8f5-9872de3af6da",
+            "logical_id": "rec-s3-status",
+            "kind": "assertion"
+          },
+          "label": "must_update"
+        },
+        {
+          "target": {
+            "project_id": "f68b8076-56d4-52a6-be0d-50f36113ad69",
+            "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+            "branch_id": "c2c20280-e284-52f6-b8f5-9872de3af6da",
+            "logical_id": "scene-4",
+            "kind": "manuscript_scene",
+            "version_id": "7907ede4-bd50-5b05-a151-b5bf0e7b4ceb"
+          },
+          "label": "inspect",
+          "note": "Gold appears in the status block."
+        },
+        {
+          "target": {
+            "project_id": "f68b8076-56d4-52a6-be0d-50f36113ad69",
+            "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+            "branch_id": "c2c20280-e284-52f6-b8f5-9872de3af6da",
+            "logical_id": "scene-5",
+            "kind": "manuscript_scene",
+            "version_id": "0bf462be-73fb-5bfe-9ef9-57a7e059057e"
+          },
+          "label": "inspect",
+          "note": "Gold appears in the status block."
+        },
+        {
+          "target": {
+            "project_id": "f68b8076-56d4-52a6-be0d-50f36113ad69",
+            "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+            "branch_id": "c2c20280-e284-52f6-b8f5-9872de3af6da",
+            "logical_id": "scene-6",
+            "kind": "manuscript_scene",
+            "version_id": "90125004-cbbb-51e6-b13d-742508b41858"
+          },
+          "label": "must_update",
+          "note": "'The last fifteen gold' no longer zeroes the ledger."
+        },
+        {
+          "target": {
+            "project_id": "f68b8076-56d4-52a6-be0d-50f36113ad69",
+            "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+            "branch_id": "c2c20280-e284-52f6-b8f5-9872de3af6da",
+            "logical_id": "f-gold-ledger",
+            "kind": "finding"
+          },
+          "label": "inspect",
+          "note": "The finding's claim arithmetic is stale."
+        },
+        {
+          "target": {
+            "project_id": "f68b8076-56d4-52a6-be0d-50f36113ad69",
+            "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+            "branch_id": "c2c20280-e284-52f6-b8f5-9872de3af6da",
+            "logical_id": "summary:scene-2",
+            "kind": "summary"
+          },
+          "label": "derived_only"
+        },
+        {
+          "target": {
+            "project_id": "f68b8076-56d4-52a6-be0d-50f36113ad69",
+            "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+            "branch_id": "c2c20280-e284-52f6-b8f5-9872de3af6da",
+            "logical_id": "scene-1",
+            "kind": "manuscript_scene",
+            "version_id": "529a4c49-6a35-5044-94a7-dd5df8eaf4a6"
+          },
+          "label": "safe_preserve"
+        },
+        {
+          "target": {
+            "project_id": "f68b8076-56d4-52a6-be0d-50f36113ad69",
+            "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+            "branch_id": "c2c20280-e284-52f6-b8f5-9872de3af6da",
+            "logical_id": "rec-rule-hp-ceiling",
+            "kind": "world_rule"
+          },
+          "label": "safe_preserve",
+          "note": "HP rules unaffected by a price change."
+        }
+      ]
+    }
+  ]
+}

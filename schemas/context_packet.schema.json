@@ -1,0 +1,357 @@
+{
+  "$defs": {
+    "ArtifactMeta": {
+      "additionalProperties": true,
+      "properties": {
+        "actor": {
+          "type": "string"
+        },
+        "artifact_id": {
+          "type": "string"
+        },
+        "artifact_kind": {
+          "type": "string"
+        },
+        "causation_id": {
+          "type": "string"
+        },
+        "config_digest": {
+          "type": "string"
+        },
+        "correlation_id": {
+          "type": "string"
+        },
+        "created_at": {
+          "type": "string"
+        },
+        "dependencies": {
+          "items": {
+            "$ref": "#/$defs/ResourceRef"
+          },
+          "type": "array"
+        },
+        "schema_version": {
+          "type": "string"
+        },
+        "source_revisions": {
+          "items": {
+            "$ref": "#/$defs/ResourceRef"
+          },
+          "type": "array"
+        },
+        "tool": {
+          "$ref": "#/$defs/ToolIdentity"
+        },
+        "warnings": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "schema_version",
+        "artifact_id",
+        "artifact_kind",
+        "created_at",
+        "actor",
+        "tool"
+      ],
+      "type": "object"
+    },
+    "ContextItem": {
+      "additionalProperties": true,
+      "properties": {
+        "authority": {
+          "$ref": "#/$defs/StateAuthority"
+        },
+        "confidence": {
+          "type": "number"
+        },
+        "dependencies": {
+          "items": {
+            "$ref": "#/$defs/ResourceRef"
+          },
+          "type": "array"
+        },
+        "item_id": {
+          "type": "string"
+        },
+        "kind": {
+          "$ref": "#/$defs/ContextItemKind"
+        },
+        "pov_visibility": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "provenance": {
+          "items": {
+            "$ref": "#/$defs/EvidenceSpan"
+          },
+          "type": "array"
+        },
+        "scores": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "type": "object"
+        },
+        "source": {
+          "$ref": "#/$defs/ResourceRef"
+        },
+        "story_scope": {
+          "$ref": "#/$defs/ResourceRef"
+        },
+        "text": {
+          "type": "string"
+        },
+        "token_count": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "item_id",
+        "kind",
+        "source",
+        "text",
+        "token_count"
+      ],
+      "type": "object"
+    },
+    "ContextItemKind": {
+      "enum": [
+        "exact_prose",
+        "plan",
+        "fact",
+        "event",
+        "thread",
+        "summary",
+        "finding",
+        "author_rule",
+        "unknown"
+      ],
+      "type": "string"
+    },
+    "EvidenceSpan": {
+      "additionalProperties": true,
+      "properties": {
+        "anchor_after": {
+          "type": "string"
+        },
+        "anchor_before": {
+          "type": "string"
+        },
+        "content_sha256": {
+          "type": "string"
+        },
+        "end": {
+          "type": "integer"
+        },
+        "source": {
+          "$ref": "#/$defs/ResourceRef"
+        },
+        "start": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "source",
+        "start",
+        "end",
+        "content_sha256"
+      ],
+      "type": "object"
+    },
+    "PacketSection": {
+      "additionalProperties": true,
+      "properties": {
+        "items": {
+          "items": {
+            "$ref": "#/$defs/ContextItem"
+          },
+          "type": "array"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "items"
+      ],
+      "type": "object"
+    },
+    "RejectedCandidate": {
+      "additionalProperties": true,
+      "properties": {
+        "item_id": {
+          "type": "string"
+        },
+        "reason": {
+          "type": "string"
+        },
+        "source": {
+          "$ref": "#/$defs/ResourceRef"
+        }
+      },
+      "required": [
+        "reason"
+      ],
+      "type": "object"
+    },
+    "ResourceKind": {
+      "enum": [
+        "manuscript_book",
+        "manuscript_part",
+        "manuscript_chapter",
+        "manuscript_scene",
+        "manuscript_block",
+        "plan",
+        "entity",
+        "assertion",
+        "state_event",
+        "relationship",
+        "knowledge",
+        "thread",
+        "world_rule",
+        "summary",
+        "embedding",
+        "context_packet",
+        "finding",
+        "graph_node",
+        "generation_candidate",
+        "revision_plan",
+        "export_artifact",
+        "job",
+        "unknown"
+      ],
+      "type": "string"
+    },
+    "ResourceRef": {
+      "additionalProperties": true,
+      "properties": {
+        "book_id": {
+          "type": "string"
+        },
+        "branch_id": {
+          "type": "string"
+        },
+        "kind": {
+          "$ref": "#/$defs/ResourceKind"
+        },
+        "logical_id": {
+          "type": "string"
+        },
+        "project_id": {
+          "type": "string"
+        },
+        "version_id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "project_id",
+        "book_id",
+        "branch_id",
+        "logical_id",
+        "kind"
+      ],
+      "type": "object"
+    },
+    "StateAuthority": {
+      "enum": [
+        "author_locked",
+        "accepted_canon",
+        "derived",
+        "proposed",
+        "unknown"
+      ],
+      "type": "string"
+    },
+    "TokenBudget": {
+      "additionalProperties": true,
+      "properties": {
+        "limit": {
+          "type": "integer"
+        },
+        "reserved_output": {
+          "type": "integer"
+        },
+        "used": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "limit",
+        "used"
+      ],
+      "type": "object"
+    },
+    "ToolIdentity": {
+      "additionalProperties": true,
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "version"
+      ],
+      "type": "object"
+    }
+  },
+  "$id": "https://litharness.dev/schemas/context_packet.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "budget": {
+      "$ref": "#/$defs/TokenBudget"
+    },
+    "consumed_sources": {
+      "items": {
+        "$ref": "#/$defs/ResourceRef"
+      },
+      "type": "array"
+    },
+    "meta": {
+      "$ref": "#/$defs/ArtifactMeta"
+    },
+    "packet_id": {
+      "type": "string"
+    },
+    "query_id": {
+      "type": "string"
+    },
+    "rejected_candidates": {
+      "items": {
+        "$ref": "#/$defs/RejectedCandidate"
+      },
+      "type": "array"
+    },
+    "sections": {
+      "items": {
+        "$ref": "#/$defs/PacketSection"
+      },
+      "type": "array"
+    },
+    "source_snapshot": {
+      "$ref": "#/$defs/ResourceRef"
+    }
+  },
+  "required": [
+    "meta",
+    "packet_id",
+    "query_id",
+    "source_snapshot",
+    "sections",
+    "budget"
+  ],
+  "title": "ContextPacket",
+  "type": "object"
+}

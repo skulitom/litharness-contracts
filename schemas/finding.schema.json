@@ -1,0 +1,280 @@
+{
+  "$defs": {
+    "ConfidenceBasis": {
+      "enum": [
+        "deterministic",
+        "calibrated_model",
+        "ensemble",
+        "heuristic",
+        "unknown"
+      ],
+      "type": "string"
+    },
+    "EvidenceSpan": {
+      "additionalProperties": true,
+      "properties": {
+        "anchor_after": {
+          "type": "string"
+        },
+        "anchor_before": {
+          "type": "string"
+        },
+        "content_sha256": {
+          "type": "string"
+        },
+        "end": {
+          "type": "integer"
+        },
+        "source": {
+          "$ref": "#/$defs/ResourceRef"
+        },
+        "start": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "source",
+        "start",
+        "end",
+        "content_sha256"
+      ],
+      "type": "object"
+    },
+    "FindingCategory": {
+      "enum": [
+        "timeline",
+        "knowledge",
+        "physical_state",
+        "inventory",
+        "relationship",
+        "location",
+        "causality",
+        "promise_payoff",
+        "world_rule",
+        "style",
+        "repetition",
+        "pacing",
+        "unknown"
+      ],
+      "type": "string"
+    },
+    "FindingScope": {
+      "additionalProperties": true,
+      "properties": {
+        "book_id": {
+          "type": "string"
+        },
+        "chapter_ids": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "scene_ids": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "book_id"
+      ],
+      "type": "object"
+    },
+    "FindingStatus": {
+      "enum": [
+        "open",
+        "accepted_intentional",
+        "confirmed",
+        "fixed",
+        "false_positive",
+        "deferred",
+        "superseded",
+        "evaluation_error",
+        "unknown"
+      ],
+      "type": "string"
+    },
+    "Reproduction": {
+      "additionalProperties": true,
+      "properties": {
+        "config_hash": {
+          "type": "string"
+        },
+        "model_digest": {
+          "type": "string"
+        },
+        "policy_version": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "ResourceKind": {
+      "enum": [
+        "manuscript_book",
+        "manuscript_part",
+        "manuscript_chapter",
+        "manuscript_scene",
+        "manuscript_block",
+        "plan",
+        "entity",
+        "assertion",
+        "state_event",
+        "relationship",
+        "knowledge",
+        "thread",
+        "world_rule",
+        "summary",
+        "embedding",
+        "context_packet",
+        "finding",
+        "graph_node",
+        "generation_candidate",
+        "revision_plan",
+        "export_artifact",
+        "job",
+        "unknown"
+      ],
+      "type": "string"
+    },
+    "ResourceRef": {
+      "additionalProperties": true,
+      "properties": {
+        "book_id": {
+          "type": "string"
+        },
+        "branch_id": {
+          "type": "string"
+        },
+        "kind": {
+          "$ref": "#/$defs/ResourceKind"
+        },
+        "logical_id": {
+          "type": "string"
+        },
+        "project_id": {
+          "type": "string"
+        },
+        "version_id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "project_id",
+        "book_id",
+        "branch_id",
+        "logical_id",
+        "kind"
+      ],
+      "type": "object"
+    },
+    "Severity": {
+      "enum": [
+        "info",
+        "minor",
+        "major",
+        "critical",
+        "unknown"
+      ],
+      "type": "string"
+    },
+    "SuggestedAction": {
+      "enum": [
+        "inspect",
+        "update_state",
+        "repair_span",
+        "revise_plan",
+        "dismiss",
+        "unknown"
+      ],
+      "type": "string"
+    }
+  },
+  "$id": "https://litharness.dev/schemas/finding.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "category": {
+      "$ref": "#/$defs/FindingCategory"
+    },
+    "claim": {
+      "additionalProperties": {},
+      "type": "object"
+    },
+    "confidence": {
+      "type": "number"
+    },
+    "confidence_basis": {
+      "$ref": "#/$defs/ConfidenceBasis"
+    },
+    "contradicting_evidence": {
+      "items": {
+        "$ref": "#/$defs/EvidenceSpan"
+      },
+      "type": "array"
+    },
+    "dependencies": {
+      "items": {
+        "$ref": "#/$defs/ResourceRef"
+      },
+      "type": "array"
+    },
+    "evaluation_run_id": {
+      "type": "string"
+    },
+    "evidence_confidence": {
+      "type": "number"
+    },
+    "finding_id": {
+      "type": "string"
+    },
+    "message": {
+      "type": "string"
+    },
+    "primary_span": {
+      "$ref": "#/$defs/EvidenceSpan"
+    },
+    "reproduction": {
+      "$ref": "#/$defs/Reproduction"
+    },
+    "rule_or_critic_id": {
+      "type": "string"
+    },
+    "scope": {
+      "$ref": "#/$defs/FindingScope"
+    },
+    "severity": {
+      "$ref": "#/$defs/Severity"
+    },
+    "severity_rationale": {
+      "type": "string"
+    },
+    "status": {
+      "$ref": "#/$defs/FindingStatus"
+    },
+    "subtype": {
+      "type": "string"
+    },
+    "suggested_action": {
+      "$ref": "#/$defs/SuggestedAction"
+    },
+    "supporting_evidence": {
+      "items": {
+        "$ref": "#/$defs/EvidenceSpan"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "finding_id",
+    "category",
+    "status",
+    "scope",
+    "severity",
+    "message"
+  ],
+  "title": "Finding",
+  "type": "object"
+}

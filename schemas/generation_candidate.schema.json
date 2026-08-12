@@ -1,0 +1,318 @@
+{
+  "$defs": {
+    "ArtifactMeta": {
+      "additionalProperties": true,
+      "properties": {
+        "actor": {
+          "type": "string"
+        },
+        "artifact_id": {
+          "type": "string"
+        },
+        "artifact_kind": {
+          "type": "string"
+        },
+        "causation_id": {
+          "type": "string"
+        },
+        "config_digest": {
+          "type": "string"
+        },
+        "correlation_id": {
+          "type": "string"
+        },
+        "created_at": {
+          "type": "string"
+        },
+        "dependencies": {
+          "items": {
+            "$ref": "#/$defs/ResourceRef"
+          },
+          "type": "array"
+        },
+        "schema_version": {
+          "type": "string"
+        },
+        "source_revisions": {
+          "items": {
+            "$ref": "#/$defs/ResourceRef"
+          },
+          "type": "array"
+        },
+        "tool": {
+          "$ref": "#/$defs/ToolIdentity"
+        },
+        "warnings": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "schema_version",
+        "artifact_id",
+        "artifact_kind",
+        "created_at",
+        "actor",
+        "tool"
+      ],
+      "type": "object"
+    },
+    "BoundedPatch": {
+      "additionalProperties": true,
+      "properties": {
+        "author_request_id": {
+          "type": "string"
+        },
+        "base_content_sha256": {
+          "type": "string"
+        },
+        "base_version_id": {
+          "type": "string"
+        },
+        "idempotency_key": {
+          "type": "string"
+        },
+        "licensed_by_finding_id": {
+          "type": "string"
+        },
+        "meta": {
+          "$ref": "#/$defs/ArtifactMeta"
+        },
+        "ops": {
+          "items": {
+            "$ref": "#/$defs/PatchOp"
+          },
+          "type": "array"
+        },
+        "target": {
+          "$ref": "#/$defs/ResourceRef"
+        }
+      },
+      "required": [
+        "meta",
+        "target",
+        "base_version_id",
+        "base_content_sha256",
+        "ops",
+        "idempotency_key"
+      ],
+      "type": "object"
+    },
+    "EvidenceSpan": {
+      "additionalProperties": true,
+      "properties": {
+        "anchor_after": {
+          "type": "string"
+        },
+        "anchor_before": {
+          "type": "string"
+        },
+        "content_sha256": {
+          "type": "string"
+        },
+        "end": {
+          "type": "integer"
+        },
+        "source": {
+          "$ref": "#/$defs/ResourceRef"
+        },
+        "start": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "source",
+        "start",
+        "end",
+        "content_sha256"
+      ],
+      "type": "object"
+    },
+    "GenerationStatus": {
+      "enum": [
+        "complete",
+        "failed",
+        "rejected",
+        "truncated",
+        "unknown"
+      ],
+      "type": "string"
+    },
+    "PatchOp": {
+      "additionalProperties": true,
+      "properties": {
+        "kind": {
+          "$ref": "#/$defs/PatchOpKind"
+        },
+        "new_text": {
+          "type": "string"
+        },
+        "target_span": {
+          "$ref": "#/$defs/EvidenceSpan"
+        }
+      },
+      "required": [
+        "kind",
+        "target_span"
+      ],
+      "type": "object"
+    },
+    "PatchOpKind": {
+      "enum": [
+        "replace_span",
+        "insert_after",
+        "delete_span",
+        "unknown"
+      ],
+      "type": "string"
+    },
+    "ResourceKind": {
+      "enum": [
+        "manuscript_book",
+        "manuscript_part",
+        "manuscript_chapter",
+        "manuscript_scene",
+        "manuscript_block",
+        "plan",
+        "entity",
+        "assertion",
+        "state_event",
+        "relationship",
+        "knowledge",
+        "thread",
+        "world_rule",
+        "summary",
+        "embedding",
+        "context_packet",
+        "finding",
+        "graph_node",
+        "generation_candidate",
+        "revision_plan",
+        "export_artifact",
+        "job",
+        "unknown"
+      ],
+      "type": "string"
+    },
+    "ResourceRef": {
+      "additionalProperties": true,
+      "properties": {
+        "book_id": {
+          "type": "string"
+        },
+        "branch_id": {
+          "type": "string"
+        },
+        "kind": {
+          "$ref": "#/$defs/ResourceKind"
+        },
+        "logical_id": {
+          "type": "string"
+        },
+        "project_id": {
+          "type": "string"
+        },
+        "version_id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "project_id",
+        "book_id",
+        "branch_id",
+        "logical_id",
+        "kind"
+      ],
+      "type": "object"
+    },
+    "TokenUsage": {
+      "additionalProperties": true,
+      "properties": {
+        "input_tokens": {
+          "type": "integer"
+        },
+        "output_tokens": {
+          "type": "integer"
+        }
+      },
+      "type": "object"
+    },
+    "ToolIdentity": {
+      "additionalProperties": true,
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "version"
+      ],
+      "type": "object"
+    },
+    "ValidationOutcome": {
+      "additionalProperties": true,
+      "properties": {
+        "check": {
+          "type": "string"
+        },
+        "detail": {
+          "type": "string"
+        },
+        "passed": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "check",
+        "passed"
+      ],
+      "type": "object"
+    }
+  },
+  "$id": "https://litharness.dev/schemas/generation_candidate.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "candidate_id": {
+      "type": "string"
+    },
+    "content": {
+      "type": "string"
+    },
+    "meta": {
+      "$ref": "#/$defs/ArtifactMeta"
+    },
+    "patch": {
+      "$ref": "#/$defs/BoundedPatch"
+    },
+    "request_id": {
+      "type": "string"
+    },
+    "status": {
+      "$ref": "#/$defs/GenerationStatus"
+    },
+    "token_usage": {
+      "$ref": "#/$defs/TokenUsage"
+    },
+    "validations": {
+      "items": {
+        "$ref": "#/$defs/ValidationOutcome"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "meta",
+    "candidate_id",
+    "request_id",
+    "status"
+  ],
+  "title": "GenerationCandidate",
+  "type": "object"
+}

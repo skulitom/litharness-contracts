@@ -1,0 +1,9 @@
+# Evidence spans in this repo are verified by SHA-256 over exact byte ranges of
+# fixture text, and tests/test_fixtures.py requires byte-stable deterministic
+# rebuilds. Any line-ending translation invalidates every content_sha256 and makes
+# the golden fixtures fail on checkout. Disable all EOL conversion: what is on disk
+# is what is in the object store, on every platform.
+#
+# The global core.autocrlf=true on the machine this repo was first committed from
+# would otherwise have rewritten LF to CRLF on checkout.
+* -text

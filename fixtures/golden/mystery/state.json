@@ -1,0 +1,483 @@
+{
+  "meta": {
+    "schema_version": "1.0.0",
+    "artifact_id": "fa14f8a6-9d35-57c8-b265-d7c46332bbd7",
+    "artifact_kind": "state_snapshot",
+    "created_at": "2026-08-12T00:00:00Z",
+    "actor": "fixture-builder",
+    "tool": {
+      "name": "litharness-contracts-fixtures",
+      "version": "0.1.0"
+    },
+    "source_revisions": [
+      {
+        "project_id": "9513d5ea-6226-54b5-a306-a3a01a6dc27f",
+        "book_id": "0e0eb0e5-89f9-5851-831c-596f4627bad7",
+        "branch_id": "8ea92b37-6188-5ae2-b517-20c57eff7b0a",
+        "logical_id": "book",
+        "kind": "manuscript_book",
+        "version_id": "1462725a-b143-5cb1-9a6b-23a63b11549b"
+      }
+    ],
+    "dependencies": [],
+    "warnings": []
+  },
+  "book_id": "0e0eb0e5-89f9-5851-831c-596f4627bad7",
+  "branch_id": "8ea92b37-6188-5ae2-b517-20c57eff7b0a",
+  "revision_id": "1462725a-b143-5cb1-9a6b-23a63b11549b",
+  "records": [
+    {
+      "record_id": "rec-edmund-dead",
+      "kind": "assertion",
+      "subject": "edmund",
+      "predicate": "life_status",
+      "value": "dead",
+      "story_position": {
+        "order_key": "s1"
+      },
+      "authority": "accepted_canon",
+      "pov_visibility": [],
+      "evidence": [
+        {
+          "source": {
+            "project_id": "9513d5ea-6226-54b5-a306-a3a01a6dc27f",
+            "book_id": "0e0eb0e5-89f9-5851-831c-596f4627bad7",
+            "branch_id": "8ea92b37-6188-5ae2-b517-20c57eff7b0a",
+            "logical_id": "scene-1",
+            "kind": "manuscript_scene",
+            "version_id": "c8d3d414-f5a5-50be-bc92-84aa441ee041"
+          },
+          "start": 239,
+          "end": 259,
+          "content_sha256": "835dae99221087eff9693a6536dbd5cbf21a1adb9fe5c3d9709d01aea655bbac"
+        }
+      ],
+      "predicate_registry_version": "fixture.v1"
+    },
+    {
+      "record_id": "rec-brandt-housekeeper",
+      "kind": "relationship",
+      "subject": "brandt",
+      "predicate": "role_in_household",
+      "value": "housekeeper",
+      "story_position": {
+        "order_key": "s1"
+      },
+      "authority": "accepted_canon",
+      "pov_visibility": [],
+      "evidence": [
+        {
+          "source": {
+            "project_id": "9513d5ea-6226-54b5-a306-a3a01a6dc27f",
+            "book_id": "0e0eb0e5-89f9-5851-831c-596f4627bad7",
+            "branch_id": "8ea92b37-6188-5ae2-b517-20c57eff7b0a",
+            "logical_id": "scene-1",
+            "kind": "manuscript_scene",
+            "version_id": "c8d3d414-f5a5-50be-bc92-84aa441ee041"
+          },
+          "start": 262,
+          "end": 290,
+          "content_sha256": "643e24c8a6912deb1bd003823e532c12bbf653370597d5e8a315d299fb49937f"
+        }
+      ],
+      "predicate_registry_version": "fixture.v1"
+    },
+    {
+      "record_id": "rec-bruno-dead",
+      "kind": "assertion",
+      "subject": "bruno",
+      "predicate": "life_status",
+      "value": "dead",
+      "story_position": {
+        "order_key": "s1"
+      },
+      "authority": "accepted_canon",
+      "pov_visibility": [],
+      "evidence": [
+        {
+          "source": {
+            "project_id": "9513d5ea-6226-54b5-a306-a3a01a6dc27f",
+            "book_id": "0e0eb0e5-89f9-5851-831c-596f4627bad7",
+            "branch_id": "8ea92b37-6188-5ae2-b517-20c57eff7b0a",
+            "logical_id": "scene-1",
+            "kind": "manuscript_scene",
+            "version_id": "c8d3d414-f5a5-50be-bc92-84aa441ee041"
+          },
+          "start": 676,
+          "end": 712,
+          "content_sha256": "526b42125820539e95b784d723759c6ed8695604b497ff07d4a91857f11a4b88"
+        }
+      ],
+      "predicate_registry_version": "fixture.v1"
+    },
+    {
+      "record_id": "rec-watch-lost",
+      "kind": "assertion",
+      "subject": "gold_watch",
+      "predicate": "item_status",
+      "value": "lost",
+      "story_position": {
+        "order_key": "s1"
+      },
+      "authority": "accepted_canon",
+      "pov_visibility": [],
+      "evidence": [
+        {
+          "source": {
+            "project_id": "9513d5ea-6226-54b5-a306-a3a01a6dc27f",
+            "book_id": "0e0eb0e5-89f9-5851-831c-596f4627bad7",
+            "branch_id": "8ea92b37-6188-5ae2-b517-20c57eff7b0a",
+            "logical_id": "scene-1",
+            "kind": "manuscript_scene",
+            "version_id": "c8d3d414-f5a5-50be-bc92-84aa441ee041"
+          },
+          "start": 607,
+          "end": 634,
+          "content_sha256": "e3a8e6e91fee7a15d6dbd73bb8b630bf1eaeb9b312fa37534e468498f0f6f0b6"
+        }
+      ],
+      "predicate_registry_version": "fixture.v1"
+    },
+    {
+      "record_id": "rec-key-missing",
+      "kind": "assertion",
+      "subject": "brass_key",
+      "predicate": "location",
+      "value": "unknown",
+      "story_position": {
+        "order_key": "s1"
+      },
+      "authority": "accepted_canon",
+      "pov_visibility": [],
+      "evidence": [
+        {
+          "source": {
+            "project_id": "9513d5ea-6226-54b5-a306-a3a01a6dc27f",
+            "book_id": "0e0eb0e5-89f9-5851-831c-596f4627bad7",
+            "branch_id": "8ea92b37-6188-5ae2-b517-20c57eff7b0a",
+            "logical_id": "scene-1",
+            "kind": "manuscript_scene",
+            "version_id": "c8d3d414-f5a5-50be-bc92-84aa441ee041"
+          },
+          "start": 460,
+          "end": 513,
+          "content_sha256": "616e05a329f6b1ad838b95074988372b9d2e152597925b11fb3a7c1ff59a80f2"
+        }
+      ],
+      "predicate_registry_version": "fixture.v1"
+    },
+    {
+      "record_id": "rec-key-opens-vault",
+      "kind": "assertion",
+      "subject": "brass_key",
+      "predicate": "opens",
+      "value": "west_vault",
+      "story_position": {
+        "order_key": "s2"
+      },
+      "authority": "accepted_canon",
+      "pov_visibility": [],
+      "evidence": [
+        {
+          "source": {
+            "project_id": "9513d5ea-6226-54b5-a306-a3a01a6dc27f",
+            "book_id": "0e0eb0e5-89f9-5851-831c-596f4627bad7",
+            "branch_id": "8ea92b37-6188-5ae2-b517-20c57eff7b0a",
+            "logical_id": "scene-2",
+            "kind": "manuscript_scene",
+            "version_id": "4438fe88-e6f8-54be-8a7f-0618a0f5a69b"
+          },
+          "start": 254,
+          "end": 288,
+          "content_sha256": "56deaf4fc2ccea94037c942366897ffb7d38888c440ab64d5f22b990934a56f1"
+        }
+      ],
+      "predicate_registry_version": "fixture.v1"
+    },
+    {
+      "record_id": "rec-key-discovered",
+      "kind": "event",
+      "subject": "mara",
+      "predicate": "discovered_item",
+      "value": {
+        "item": "brass_key",
+        "location": "under_floorboard"
+      },
+      "story_position": {
+        "order_key": "s2"
+      },
+      "authority": "accepted_canon",
+      "pov_visibility": [],
+      "evidence": [
+        {
+          "source": {
+            "project_id": "9513d5ea-6226-54b5-a306-a3a01a6dc27f",
+            "book_id": "0e0eb0e5-89f9-5851-831c-596f4627bad7",
+            "branch_id": "8ea92b37-6188-5ae2-b517-20c57eff7b0a",
+            "logical_id": "scene-2",
+            "kind": "manuscript_scene",
+            "version_id": "4438fe88-e6f8-54be-8a7f-0618a0f5a69b"
+          },
+          "start": 609,
+          "end": 667,
+          "content_sha256": "f8bc17ce8268a48256f70eaf782bdf348f6eacd53bd8cb1747ddf2d7e91c7b90"
+        }
+      ],
+      "predicate_registry_version": "fixture.v1"
+    },
+    {
+      "record_id": "rec-mara-knows-floorboard",
+      "kind": "knowledge",
+      "subject": "mara",
+      "predicate": "knows",
+      "value": "key_hidden_under_floorboard",
+      "story_position": {
+        "order_key": "s2"
+      },
+      "authority": "accepted_canon",
+      "pov_visibility": [
+        "mara",
+        "brandt"
+      ],
+      "evidence": [
+        {
+          "source": {
+            "project_id": "9513d5ea-6226-54b5-a306-a3a01a6dc27f",
+            "book_id": "0e0eb0e5-89f9-5851-831c-596f4627bad7",
+            "branch_id": "8ea92b37-6188-5ae2-b517-20c57eff7b0a",
+            "logical_id": "scene-2",
+            "kind": "manuscript_scene",
+            "version_id": "4438fe88-e6f8-54be-8a7f-0618a0f5a69b"
+          },
+          "start": 723,
+          "end": 748,
+          "content_sha256": "af1d0056ce714d4724f309492a8d6cdf4c9d2f41033e6e724e87eef35608cc2a"
+        }
+      ],
+      "predicate_registry_version": "fixture.v1"
+    },
+    {
+      "record_id": "rec-floorboard-secret",
+      "kind": "assertion",
+      "subject": "floorboard_discovery",
+      "predicate": "disclosure_status",
+      "value": "undisclosed",
+      "story_position": {
+        "order_key": "s3"
+      },
+      "authority": "accepted_canon",
+      "pov_visibility": [],
+      "evidence": [
+        {
+          "source": {
+            "project_id": "9513d5ea-6226-54b5-a306-a3a01a6dc27f",
+            "book_id": "0e0eb0e5-89f9-5851-831c-596f4627bad7",
+            "branch_id": "8ea92b37-6188-5ae2-b517-20c57eff7b0a",
+            "logical_id": "scene-3",
+            "kind": "manuscript_scene",
+            "version_id": "c3be0842-413e-5481-9588-661c44d633a8"
+          },
+          "start": 457,
+          "end": 498,
+          "content_sha256": "abe9b56a06548e7f7785a9ff828bf978b8b94c8e8e9935df642bd5fcef2a457c"
+        }
+      ],
+      "predicate_registry_version": "fixture.v1"
+    },
+    {
+      "record_id": "rec-brandt-knows-letter",
+      "kind": "knowledge",
+      "subject": "brandt",
+      "predicate": "knows",
+      "value": "sealed_letter_contents",
+      "story_position": {
+        "order_key": "s1"
+      },
+      "authority": "author_locked",
+      "pov_visibility": [
+        "brandt"
+      ],
+      "evidence": [],
+      "predicate_registry_version": "fixture.v1",
+      "note": "Author canon, never in prose and never learned by Mara. Forbidden context for any Mara-POV operation."
+    },
+    {
+      "record_id": "rec-julian-claim-city",
+      "kind": "knowledge",
+      "subject": "julian",
+      "predicate": "claims",
+      "value": "was_in_city_all_week",
+      "story_position": {
+        "order_key": "s3"
+      },
+      "authority": "accepted_canon",
+      "pov_visibility": [],
+      "evidence": [
+        {
+          "source": {
+            "project_id": "9513d5ea-6226-54b5-a306-a3a01a6dc27f",
+            "book_id": "0e0eb0e5-89f9-5851-831c-596f4627bad7",
+            "branch_id": "8ea92b37-6188-5ae2-b517-20c57eff7b0a",
+            "logical_id": "scene-3",
+            "kind": "manuscript_scene",
+            "version_id": "c3be0842-413e-5481-9588-661c44d633a8"
+          },
+          "start": 197,
+          "end": 223,
+          "content_sha256": "8161aee779d3763c8a68160eacf9705b584e9c128b9e464bb6202b722df4b746"
+        }
+      ],
+      "predicate_registry_version": "fixture.v1",
+      "note": "Belief/report, not truth. Intentional lie per plan-julian-lie."
+    },
+    {
+      "record_id": "rec-julian-at-house",
+      "kind": "event",
+      "subject": "julian",
+      "predicate": "present_at",
+      "value": {
+        "place": "vane_house",
+        "when": "night_of_death"
+      },
+      "story_position": {
+        "order_key": "s1"
+      },
+      "authority": "author_locked",
+      "pov_visibility": [],
+      "evidence": [
+        {
+          "source": {
+            "project_id": "9513d5ea-6226-54b5-a306-a3a01a6dc27f",
+            "book_id": "0e0eb0e5-89f9-5851-831c-596f4627bad7",
+            "branch_id": "8ea92b37-6188-5ae2-b517-20c57eff7b0a",
+            "logical_id": "scene-5",
+            "kind": "manuscript_scene",
+            "version_id": "b784380a-3721-590f-b9e7-ce2e73b050d8"
+          },
+          "start": 568,
+          "end": 602,
+          "content_sha256": "086a3a39aae9591cfd4de2e8d42d0415baa01ffc82ce10537a889702868a97f5"
+        }
+      ],
+      "predicate_registry_version": "fixture.v1"
+    },
+    {
+      "record_id": "rec-new-will",
+      "kind": "assertion",
+      "subject": "new_will",
+      "predicate": "disinherits",
+      "value": "julian",
+      "story_position": {
+        "order_key": "s4"
+      },
+      "authority": "accepted_canon",
+      "pov_visibility": [],
+      "evidence": [
+        {
+          "source": {
+            "project_id": "9513d5ea-6226-54b5-a306-a3a01a6dc27f",
+            "book_id": "0e0eb0e5-89f9-5851-831c-596f4627bad7",
+            "branch_id": "8ea92b37-6188-5ae2-b517-20c57eff7b0a",
+            "logical_id": "scene-4",
+            "kind": "manuscript_scene",
+            "version_id": "d47398b3-afb2-5d42-ad1a-f374f89c46aa"
+          },
+          "start": 330,
+          "end": 374,
+          "content_sha256": "aba02f36d10a7f4b0eaa63466b2bfe6d2a060a61136319cd699f3f6e61178cb5"
+        }
+      ],
+      "predicate_registry_version": "fixture.v1"
+    },
+    {
+      "record_id": "rec-doctor-arrival",
+      "kind": "event",
+      "subject": "dr_hale",
+      "predicate": "arrived_at",
+      "value": {
+        "place": "study",
+        "when": "hour_after_dawn"
+      },
+      "story_position": {
+        "order_key": "s1"
+      },
+      "authority": "accepted_canon",
+      "pov_visibility": [],
+      "evidence": [
+        {
+          "source": {
+            "project_id": "9513d5ea-6226-54b5-a306-a3a01a6dc27f",
+            "book_id": "0e0eb0e5-89f9-5851-831c-596f4627bad7",
+            "branch_id": "8ea92b37-6188-5ae2-b517-20c57eff7b0a",
+            "logical_id": "scene-2",
+            "kind": "manuscript_scene",
+            "version_id": "4438fe88-e6f8-54be-8a7f-0618a0f5a69b"
+          },
+          "start": 119,
+          "end": 155,
+          "content_sha256": "f72dee417553b29d0eb3def4d2d41c0fe5dd669b0624158b61116578788b19e8"
+        }
+      ],
+      "predicate_registry_version": "fixture.v1"
+    },
+    {
+      "record_id": "rec-tomas-conservatory",
+      "kind": "event",
+      "subject": "tomas",
+      "predicate": "located_in",
+      "value": {
+        "place": "conservatory",
+        "when": "interview_hour"
+      },
+      "story_position": {
+        "order_key": "s2"
+      },
+      "authority": "accepted_canon",
+      "pov_visibility": [],
+      "evidence": [
+        {
+          "source": {
+            "project_id": "9513d5ea-6226-54b5-a306-a3a01a6dc27f",
+            "book_id": "0e0eb0e5-89f9-5851-831c-596f4627bad7",
+            "branch_id": "8ea92b37-6188-5ae2-b517-20c57eff7b0a",
+            "logical_id": "scene-2",
+            "kind": "manuscript_scene",
+            "version_id": "4438fe88-e6f8-54be-8a7f-0618a0f5a69b"
+          },
+          "start": 46,
+          "end": 100,
+          "content_sha256": "f3b304d69d2a92fe56687cd2d33ef7c38b9c77fe5ebfcb74fdf0211fdbdddc1a"
+        }
+      ],
+      "predicate_registry_version": "fixture.v1"
+    },
+    {
+      "record_id": "rec-letter-promise",
+      "kind": "thread",
+      "subject": "sealed_letter_reading",
+      "predicate": "thread_status",
+      "value": "open",
+      "story_position": {
+        "order_key": "s1"
+      },
+      "authority": "accepted_canon",
+      "pov_visibility": [],
+      "evidence": [
+        {
+          "source": {
+            "project_id": "9513d5ea-6226-54b5-a306-a3a01a6dc27f",
+            "book_id": "0e0eb0e5-89f9-5851-831c-596f4627bad7",
+            "branch_id": "8ea92b37-6188-5ae2-b517-20c57eff7b0a",
+            "logical_id": "scene-1",
+            "kind": "manuscript_scene",
+            "version_id": "c8d3d414-f5a5-50be-bc92-84aa441ee041"
+          },
+          "start": 859,
+          "end": 917,
+          "content_sha256": "07e8498afecc930fe5022267135de7ef788f61a51bb37363c56351f897c36de9"
+        }
+      ],
+      "predicate_registry_version": "fixture.v1"
+    }
+  ]
+}

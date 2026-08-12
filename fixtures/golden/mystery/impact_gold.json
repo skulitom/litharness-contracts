@@ -1,0 +1,512 @@
+{
+  "meta": {
+    "schema_version": "1.0.0",
+    "artifact_id": "f9710db6-2733-54e7-a8d0-6a8a3e4602a6",
+    "artifact_kind": "gold_impact_suite",
+    "created_at": "2026-08-12T00:00:00Z",
+    "actor": "fixture-builder",
+    "tool": {
+      "name": "litharness-contracts-fixtures",
+      "version": "0.1.0"
+    },
+    "source_revisions": [
+      {
+        "project_id": "9513d5ea-6226-54b5-a306-a3a01a6dc27f",
+        "book_id": "0e0eb0e5-89f9-5851-831c-596f4627bad7",
+        "branch_id": "8ea92b37-6188-5ae2-b517-20c57eff7b0a",
+        "logical_id": "book",
+        "kind": "manuscript_book",
+        "version_id": "1462725a-b143-5cb1-9a6b-23a63b11549b"
+      }
+    ],
+    "dependencies": [],
+    "warnings": []
+  },
+  "fixture_id": "mystery",
+  "cases": [
+    {
+      "scenario_id": "e1-move-key-discovery",
+      "description": "Move the discovery of the brass key from scene 2 to scene 5.",
+      "change_set": {
+        "meta": {
+          "schema_version": "1.0.0",
+          "artifact_id": "8a4fa17b-28fb-5cd9-b7d2-32ea41fd3502",
+          "artifact_kind": "change_set",
+          "created_at": "2026-08-12T00:00:00Z",
+          "actor": "fixture-builder",
+          "tool": {
+            "name": "litharness-contracts-fixtures",
+            "version": "0.1.0"
+          },
+          "source_revisions": [
+            {
+              "project_id": "9513d5ea-6226-54b5-a306-a3a01a6dc27f",
+              "book_id": "0e0eb0e5-89f9-5851-831c-596f4627bad7",
+              "branch_id": "8ea92b37-6188-5ae2-b517-20c57eff7b0a",
+              "logical_id": "book",
+              "kind": "manuscript_book",
+              "version_id": "1462725a-b143-5cb1-9a6b-23a63b11549b"
+            }
+          ],
+          "dependencies": [],
+          "warnings": []
+        },
+        "change_set_id": "8a4fa17b-28fb-5cd9-b7d2-32ea41fd3502",
+        "base_revision": "1462725a-b143-5cb1-9a6b-23a63b11549b",
+        "target_branch": "8ea92b37-6188-5ae2-b517-20c57eff7b0a",
+        "actor": "author",
+        "operations": [
+          {
+            "kind": "replace_span",
+            "logical_source_id": "scene-2",
+            "before_version": "4438fe88-e6f8-54be-8a7f-0618a0f5a69b",
+            "after_version": "3a8c1a4b-10cb-57d5-9c72-bcee329df65a",
+            "before_hash": "585685f9026480cc8621aae696d74b3307871a44668a85d8762bcafb407e938b",
+            "after_hash": "d4133db986f2f64278e072547f6997ec2bf14b5f12149766b366acd4a347ead5",
+            "detail": {
+              "quote": "It was Mara who found it. Kneeling where the carpet's corner sat proud of the boards, she pried up the loose floorboard and lifted the brass key from the dark beneath, cold and unhurried in her palm. Only Brandt saw her do it, and Mara asked her to keep it so.",
+              "new_text": "The key itself stayed hidden, wherever Edmund had left it."
+            }
+          },
+          {
+            "kind": "insert",
+            "logical_source_id": "scene-5",
+            "before_version": "b784380a-3721-590f-b9e7-ce2e73b050d8",
+            "after_version": "991411c3-dc72-545d-b008-58d142483140",
+            "detail": {
+              "anchor_quote": "They gathered in the study at dusk",
+              "new_text": "Before the others arrived, Mara had knelt where the carpet's corner sat proud of the boards, pried up the loose floorboard, and lifted the brass key from the dark beneath."
+            }
+          }
+        ],
+        "idempotency_key": "4123661e-4c7f-52a9-ae2c-c34b4d33b7d7",
+        "extracted_changes": [
+          {
+            "kind": "event_moved",
+            "subject": "rec-key-discovered",
+            "before": "s2",
+            "after": "s5",
+            "evidence": [],
+            "confidence": 1.0
+          }
+        ],
+        "declared_intent": "Mara should find the key only at the gathering, raising stakes earlier.",
+        "preservation_constraints": []
+      },
+      "expected": [
+        {
+          "target": {
+            "project_id": "9513d5ea-6226-54b5-a306-a3a01a6dc27f",
+            "book_id": "0e0eb0e5-89f9-5851-831c-596f4627bad7",
+            "branch_id": "8ea92b37-6188-5ae2-b517-20c57eff7b0a",
+            "logical_id": "rec-key-discovered",
+            "kind": "state_event"
+          },
+          "label": "must_update",
+          "note": "Story position moves to s5."
+        },
+        {
+          "target": {
+            "project_id": "9513d5ea-6226-54b5-a306-a3a01a6dc27f",
+            "book_id": "0e0eb0e5-89f9-5851-831c-596f4627bad7",
+            "branch_id": "8ea92b37-6188-5ae2-b517-20c57eff7b0a",
+            "logical_id": "rec-mara-knows-floorboard",
+            "kind": "knowledge"
+          },
+          "label": "must_update",
+          "note": "Knowledge acquisition moves with the event."
+        },
+        {
+          "target": {
+            "project_id": "9513d5ea-6226-54b5-a306-a3a01a6dc27f",
+            "book_id": "0e0eb0e5-89f9-5851-831c-596f4627bad7",
+            "branch_id": "8ea92b37-6188-5ae2-b517-20c57eff7b0a",
+            "logical_id": "scene-4",
+            "kind": "manuscript_scene",
+            "version_id": "d47398b3-afb2-5d42-ad1a-f374f89c46aa"
+          },
+          "label": "must_update",
+          "note": "The vault is opened with a key Mara has not yet found."
+        },
+        {
+          "target": {
+            "project_id": "9513d5ea-6226-54b5-a306-a3a01a6dc27f",
+            "book_id": "0e0eb0e5-89f9-5851-831c-596f4627bad7",
+            "branch_id": "8ea92b37-6188-5ae2-b517-20c57eff7b0a",
+            "logical_id": "scene-3",
+            "kind": "manuscript_scene",
+            "version_id": "c3be0842-413e-5481-9588-661c44d633a8"
+          },
+          "label": "inspect",
+          "note": "Julian's floorboard line now references an event that has not happened."
+        },
+        {
+          "target": {
+            "project_id": "9513d5ea-6226-54b5-a306-a3a01a6dc27f",
+            "book_id": "0e0eb0e5-89f9-5851-831c-596f4627bad7",
+            "branch_id": "8ea92b37-6188-5ae2-b517-20c57eff7b0a",
+            "logical_id": "f-control-julian-floorboard",
+            "kind": "finding"
+          },
+          "label": "inspect",
+          "note": "The intentional control may become a genuine defect under the new ordering."
+        },
+        {
+          "target": {
+            "project_id": "9513d5ea-6226-54b5-a306-a3a01a6dc27f",
+            "book_id": "0e0eb0e5-89f9-5851-831c-596f4627bad7",
+            "branch_id": "8ea92b37-6188-5ae2-b517-20c57eff7b0a",
+            "logical_id": "summary:scene-2",
+            "kind": "summary"
+          },
+          "label": "derived_only"
+        },
+        {
+          "target": {
+            "project_id": "9513d5ea-6226-54b5-a306-a3a01a6dc27f",
+            "book_id": "0e0eb0e5-89f9-5851-831c-596f4627bad7",
+            "branch_id": "8ea92b37-6188-5ae2-b517-20c57eff7b0a",
+            "logical_id": "summary:scene-5",
+            "kind": "summary"
+          },
+          "label": "derived_only"
+        },
+        {
+          "target": {
+            "project_id": "9513d5ea-6226-54b5-a306-a3a01a6dc27f",
+            "book_id": "0e0eb0e5-89f9-5851-831c-596f4627bad7",
+            "branch_id": "8ea92b37-6188-5ae2-b517-20c57eff7b0a",
+            "logical_id": "scene-1",
+            "kind": "manuscript_scene",
+            "version_id": "c8d3d414-f5a5-50be-bc92-84aa441ee041"
+          },
+          "label": "safe_preserve"
+        },
+        {
+          "target": {
+            "project_id": "9513d5ea-6226-54b5-a306-a3a01a6dc27f",
+            "book_id": "0e0eb0e5-89f9-5851-831c-596f4627bad7",
+            "branch_id": "8ea92b37-6188-5ae2-b517-20c57eff7b0a",
+            "logical_id": "scene-6",
+            "kind": "manuscript_scene",
+            "version_id": "b6ddf0b6-ee00-59c3-8411-84c55a07ad78"
+          },
+          "label": "safe_preserve"
+        }
+      ]
+    },
+    {
+      "scenario_id": "e2-rename-julian",
+      "description": "Rename Julian Vane to Adrian Vane; the alias 'the nephew' is preserved.",
+      "change_set": {
+        "meta": {
+          "schema_version": "1.0.0",
+          "artifact_id": "23ec49c9-2aac-5200-8301-75e95d2d1368",
+          "artifact_kind": "change_set",
+          "created_at": "2026-08-12T00:00:00Z",
+          "actor": "fixture-builder",
+          "tool": {
+            "name": "litharness-contracts-fixtures",
+            "version": "0.1.0"
+          },
+          "source_revisions": [
+            {
+              "project_id": "9513d5ea-6226-54b5-a306-a3a01a6dc27f",
+              "book_id": "0e0eb0e5-89f9-5851-831c-596f4627bad7",
+              "branch_id": "8ea92b37-6188-5ae2-b517-20c57eff7b0a",
+              "logical_id": "book",
+              "kind": "manuscript_book",
+              "version_id": "1462725a-b143-5cb1-9a6b-23a63b11549b"
+            }
+          ],
+          "dependencies": [],
+          "warnings": []
+        },
+        "change_set_id": "23ec49c9-2aac-5200-8301-75e95d2d1368",
+        "base_revision": "1462725a-b143-5cb1-9a6b-23a63b11549b",
+        "target_branch": "8ea92b37-6188-5ae2-b517-20c57eff7b0a",
+        "actor": "author",
+        "operations": [
+          {
+            "kind": "rename",
+            "logical_source_id": "entity:julian",
+            "detail": {
+              "from": "Julian",
+              "to": "Adrian",
+              "preserve_aliases": [
+                "the nephew",
+                "no nephew"
+              ]
+            }
+          }
+        ],
+        "idempotency_key": "f1cc62ec-00ef-5399-a86a-03ba356389ef",
+        "extracted_changes": [
+          {
+            "kind": "entity_renamed",
+            "subject": "julian",
+            "before": "Julian",
+            "after": "Adrian",
+            "evidence": [],
+            "confidence": 1.0
+          }
+        ],
+        "declared_intent": "Rename the antagonist without touching alias references.",
+        "preservation_constraints": []
+      },
+      "expected": [
+        {
+          "target": {
+            "project_id": "9513d5ea-6226-54b5-a306-a3a01a6dc27f",
+            "book_id": "0e0eb0e5-89f9-5851-831c-596f4627bad7",
+            "branch_id": "8ea92b37-6188-5ae2-b517-20c57eff7b0a",
+            "logical_id": "scene-3",
+            "kind": "manuscript_scene",
+            "version_id": "c3be0842-413e-5481-9588-661c44d633a8"
+          },
+          "label": "must_update",
+          "note": "Direct name mentions."
+        },
+        {
+          "target": {
+            "project_id": "9513d5ea-6226-54b5-a306-a3a01a6dc27f",
+            "book_id": "0e0eb0e5-89f9-5851-831c-596f4627bad7",
+            "branch_id": "8ea92b37-6188-5ae2-b517-20c57eff7b0a",
+            "logical_id": "scene-5",
+            "kind": "manuscript_scene",
+            "version_id": "b784380a-3721-590f-b9e7-ce2e73b050d8"
+          },
+          "label": "must_update",
+          "note": "Direct name mentions."
+        },
+        {
+          "target": {
+            "project_id": "9513d5ea-6226-54b5-a306-a3a01a6dc27f",
+            "book_id": "0e0eb0e5-89f9-5851-831c-596f4627bad7",
+            "branch_id": "8ea92b37-6188-5ae2-b517-20c57eff7b0a",
+            "logical_id": "scene-6",
+            "kind": "manuscript_scene",
+            "version_id": "b6ddf0b6-ee00-59c3-8411-84c55a07ad78"
+          },
+          "label": "must_update",
+          "note": "Direct name mentions."
+        },
+        {
+          "target": {
+            "project_id": "9513d5ea-6226-54b5-a306-a3a01a6dc27f",
+            "book_id": "0e0eb0e5-89f9-5851-831c-596f4627bad7",
+            "branch_id": "8ea92b37-6188-5ae2-b517-20c57eff7b0a",
+            "logical_id": "rec-julian-claim-city",
+            "kind": "knowledge"
+          },
+          "label": "must_update",
+          "note": "Subject display name."
+        },
+        {
+          "target": {
+            "project_id": "9513d5ea-6226-54b5-a306-a3a01a6dc27f",
+            "book_id": "0e0eb0e5-89f9-5851-831c-596f4627bad7",
+            "branch_id": "8ea92b37-6188-5ae2-b517-20c57eff7b0a",
+            "logical_id": "rec-julian-at-house",
+            "kind": "state_event"
+          },
+          "label": "must_update",
+          "note": "Subject display name."
+        },
+        {
+          "target": {
+            "project_id": "9513d5ea-6226-54b5-a306-a3a01a6dc27f",
+            "book_id": "0e0eb0e5-89f9-5851-831c-596f4627bad7",
+            "branch_id": "8ea92b37-6188-5ae2-b517-20c57eff7b0a",
+            "logical_id": "scene-1",
+            "kind": "manuscript_scene",
+            "version_id": "c8d3d414-f5a5-50be-bc92-84aa441ee041"
+          },
+          "label": "safe_preserve",
+          "note": "No mention of Julian."
+        },
+        {
+          "target": {
+            "project_id": "9513d5ea-6226-54b5-a306-a3a01a6dc27f",
+            "book_id": "0e0eb0e5-89f9-5851-831c-596f4627bad7",
+            "branch_id": "8ea92b37-6188-5ae2-b517-20c57eff7b0a",
+            "logical_id": "scene-2",
+            "kind": "manuscript_scene",
+            "version_id": "4438fe88-e6f8-54be-8a7f-0618a0f5a69b"
+          },
+          "label": "safe_preserve",
+          "note": "No mention of Julian."
+        },
+        {
+          "target": {
+            "project_id": "9513d5ea-6226-54b5-a306-a3a01a6dc27f",
+            "book_id": "0e0eb0e5-89f9-5851-831c-596f4627bad7",
+            "branch_id": "8ea92b37-6188-5ae2-b517-20c57eff7b0a",
+            "logical_id": "scene-4",
+            "kind": "manuscript_scene",
+            "version_id": "d47398b3-afb2-5d42-ad1a-f374f89c46aa"
+          },
+          "label": "safe_preserve",
+          "note": "Only the preserved alias 'no nephew at all'."
+        },
+        {
+          "target": {
+            "project_id": "9513d5ea-6226-54b5-a306-a3a01a6dc27f",
+            "book_id": "0e0eb0e5-89f9-5851-831c-596f4627bad7",
+            "branch_id": "8ea92b37-6188-5ae2-b517-20c57eff7b0a",
+            "logical_id": "summary:book",
+            "kind": "summary"
+          },
+          "label": "derived_only"
+        }
+      ]
+    },
+    {
+      "scenario_id": "e3-typography-only",
+      "description": "Typography-only edit in scene 1; semantic propagation must not expand.",
+      "change_set": {
+        "meta": {
+          "schema_version": "1.0.0",
+          "artifact_id": "1986dae7-1a79-5e48-9b5f-47488a07e044",
+          "artifact_kind": "change_set",
+          "created_at": "2026-08-12T00:00:00Z",
+          "actor": "fixture-builder",
+          "tool": {
+            "name": "litharness-contracts-fixtures",
+            "version": "0.1.0"
+          },
+          "source_revisions": [
+            {
+              "project_id": "9513d5ea-6226-54b5-a306-a3a01a6dc27f",
+              "book_id": "0e0eb0e5-89f9-5851-831c-596f4627bad7",
+              "branch_id": "8ea92b37-6188-5ae2-b517-20c57eff7b0a",
+              "logical_id": "book",
+              "kind": "manuscript_book",
+              "version_id": "1462725a-b143-5cb1-9a6b-23a63b11549b"
+            }
+          ],
+          "dependencies": [],
+          "warnings": []
+        },
+        "change_set_id": "1986dae7-1a79-5e48-9b5f-47488a07e044",
+        "base_revision": "1462725a-b143-5cb1-9a6b-23a63b11549b",
+        "target_branch": "8ea92b37-6188-5ae2-b517-20c57eff7b0a",
+        "actor": "author",
+        "operations": [
+          {
+            "kind": "replace_span",
+            "logical_source_id": "scene-1",
+            "before_version": "c8d3d414-f5a5-50be-bc92-84aa441ee041",
+            "after_version": "30d2037a-926a-55d0-99dc-4a342e67048c",
+            "before_hash": "f17547452d02882bd46bacb9c08dbc50c9344c480341f05be7d18f814c3696a2",
+            "after_hash": "d3700e6ea88e765c0076299da24a10b272ebfa0f43a8b0ba495eaf96e62c1d21",
+            "detail": {
+              "quote": "the study's tall window",
+              "new_text": "the study’s tall window"
+            }
+          }
+        ],
+        "idempotency_key": "729bf0f4-0c47-59fd-a5c8-75d8f741554c",
+        "extracted_changes": [
+          {
+            "kind": "surface_only",
+            "evidence": [],
+            "confidence": 1.0
+          }
+        ],
+        "declared_intent": "Surface formatting only.",
+        "preservation_constraints": []
+      },
+      "expected": [
+        {
+          "target": {
+            "project_id": "9513d5ea-6226-54b5-a306-a3a01a6dc27f",
+            "book_id": "0e0eb0e5-89f9-5851-831c-596f4627bad7",
+            "branch_id": "8ea92b37-6188-5ae2-b517-20c57eff7b0a",
+            "logical_id": "summary:scene-1",
+            "kind": "summary"
+          },
+          "label": "derived_only",
+          "note": "Content hash changed; recompute derived artifacts only."
+        },
+        {
+          "target": {
+            "project_id": "9513d5ea-6226-54b5-a306-a3a01a6dc27f",
+            "book_id": "0e0eb0e5-89f9-5851-831c-596f4627bad7",
+            "branch_id": "8ea92b37-6188-5ae2-b517-20c57eff7b0a",
+            "logical_id": "scene-2",
+            "kind": "manuscript_scene",
+            "version_id": "4438fe88-e6f8-54be-8a7f-0618a0f5a69b"
+          },
+          "label": "safe_preserve"
+        },
+        {
+          "target": {
+            "project_id": "9513d5ea-6226-54b5-a306-a3a01a6dc27f",
+            "book_id": "0e0eb0e5-89f9-5851-831c-596f4627bad7",
+            "branch_id": "8ea92b37-6188-5ae2-b517-20c57eff7b0a",
+            "logical_id": "scene-3",
+            "kind": "manuscript_scene",
+            "version_id": "c3be0842-413e-5481-9588-661c44d633a8"
+          },
+          "label": "safe_preserve"
+        },
+        {
+          "target": {
+            "project_id": "9513d5ea-6226-54b5-a306-a3a01a6dc27f",
+            "book_id": "0e0eb0e5-89f9-5851-831c-596f4627bad7",
+            "branch_id": "8ea92b37-6188-5ae2-b517-20c57eff7b0a",
+            "logical_id": "scene-4",
+            "kind": "manuscript_scene",
+            "version_id": "d47398b3-afb2-5d42-ad1a-f374f89c46aa"
+          },
+          "label": "safe_preserve"
+        },
+        {
+          "target": {
+            "project_id": "9513d5ea-6226-54b5-a306-a3a01a6dc27f",
+            "book_id": "0e0eb0e5-89f9-5851-831c-596f4627bad7",
+            "branch_id": "8ea92b37-6188-5ae2-b517-20c57eff7b0a",
+            "logical_id": "scene-5",
+            "kind": "manuscript_scene",
+            "version_id": "b784380a-3721-590f-b9e7-ce2e73b050d8"
+          },
+          "label": "safe_preserve"
+        },
+        {
+          "target": {
+            "project_id": "9513d5ea-6226-54b5-a306-a3a01a6dc27f",
+            "book_id": "0e0eb0e5-89f9-5851-831c-596f4627bad7",
+            "branch_id": "8ea92b37-6188-5ae2-b517-20c57eff7b0a",
+            "logical_id": "scene-6",
+            "kind": "manuscript_scene",
+            "version_id": "b6ddf0b6-ee00-59c3-8411-84c55a07ad78"
+          },
+          "label": "safe_preserve"
+        },
+        {
+          "target": {
+            "project_id": "9513d5ea-6226-54b5-a306-a3a01a6dc27f",
+            "book_id": "0e0eb0e5-89f9-5851-831c-596f4627bad7",
+            "branch_id": "8ea92b37-6188-5ae2-b517-20c57eff7b0a",
+            "logical_id": "rec-edmund-dead",
+            "kind": "assertion"
+          },
+          "label": "safe_preserve",
+          "note": "No state record changes on a surface-only edit."
+        },
+        {
+          "target": {
+            "project_id": "9513d5ea-6226-54b5-a306-a3a01a6dc27f",
+            "book_id": "0e0eb0e5-89f9-5851-831c-596f4627bad7",
+            "branch_id": "8ea92b37-6188-5ae2-b517-20c57eff7b0a",
+            "logical_id": "f-state-bruno",
+            "kind": "finding"
+          },
+          "label": "safe_preserve",
+          "note": "Findings do not go stale on typography."
+        }
+      ]
+    }
+  ]
+}

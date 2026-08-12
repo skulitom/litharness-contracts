@@ -1,0 +1,111 @@
+{
+  "meta": {
+    "schema_version": "1.0.0",
+    "artifact_id": "0336aba5-37a4-53bf-a001-cae1f6bab54f",
+    "artifact_kind": "manuscript_revision",
+    "created_at": "2026-08-12T00:00:00Z",
+    "actor": "fixture-builder",
+    "tool": {
+      "name": "litharness-contracts-fixtures",
+      "version": "0.1.0"
+    },
+    "source_revisions": [
+      {
+        "project_id": "9513d5ea-6226-54b5-a306-a3a01a6dc27f",
+        "book_id": "0e0eb0e5-89f9-5851-831c-596f4627bad7",
+        "branch_id": "8ea92b37-6188-5ae2-b517-20c57eff7b0a",
+        "logical_id": "book",
+        "kind": "manuscript_book",
+        "version_id": "1462725a-b143-5cb1-9a6b-23a63b11549b"
+      }
+    ],
+    "dependencies": [],
+    "warnings": []
+  },
+  "book_id": "0e0eb0e5-89f9-5851-831c-596f4627bad7",
+  "branch_id": "8ea92b37-6188-5ae2-b517-20c57eff7b0a",
+  "revision_id": "1462725a-b143-5cb1-9a6b-23a63b11549b",
+  "nodes": [
+    {
+      "logical_id": "book",
+      "kind": "book",
+      "position_key": "000",
+      "title": "The Vane House",
+      "version_id": "1462725a-b143-5cb1-9a6b-23a63b11549b",
+      "locked": false,
+      "metadata": {}
+    },
+    {
+      "logical_id": "scene-1",
+      "kind": "scene",
+      "position_key": "010",
+      "parent_logical_id": "book",
+      "title": "The Study",
+      "content": "Rain ticked against the glass of the study's tall window when Mara Voss arrived. Edmund Vane lay where he had fallen, sprawled beneath the portrait of his father, and Dr. Hale's first glance only confirmed what the household already knew: Edmund Vane was dead.\n\nMrs. Brandt, the housekeeper, stood at the door with her hands knotted in her apron. She had kept the house for thirty years, she said, and never once locked the study.\n\nMara noted what was absent. The brass key Edmund wore on his watch chain was gone, though the chain itself remained. The gold watch was another matter entirely; that had been lost in the river years ago, along with much else of the old estate. The hound Bruno had died last winter, and his basket still sat cold by the hearth.\n\nOne instruction survived its author, recorded in Edmund's own hand and witnessed by his solicitor: the sealed letter was to be read aloud at the will reading, and not before.\n",
+      "content_sha256": "0430e2b8bb65c8b48906b1b047f808e4d6fc7a2afb0f029a12a60a05dc9c8e2c",
+      "version_id": "c8d3d414-f5a5-50be-bc92-84aa441ee041",
+      "locked": false,
+      "metadata": {}
+    },
+    {
+      "logical_id": "scene-2",
+      "kind": "scene",
+      "position_key": "020",
+      "parent_logical_id": "book",
+      "title": "The Conservatory",
+      "content": "Mrs. Brandt received her in the conservatory, among orchids Tomas Reyes was repotting that same hour at the far bench. Dr. Hale had come an hour after dawn, she said, and nothing in the study had been moved before he arrived.\n\nMara asked about the key. \"The brass key opens the west vault,\" Brandt said. \"Edmund trusted no bank.\" The vault lock takes the key in two turns, once left to lift the wards, once right to draw the bolt. Brandt had watched Edmund work it a hundred times and had never once held the key herself.\n\nIt was Mara who found it. Kneeling where the carpet's corner sat proud of the boards, she pried up the loose floorboard and lifted the brass key from the dark beneath, cold and unhurried in her palm. Only Brandt saw her do it, and Mara asked her to keep it so.\n",
+      "content_sha256": "a41706b8e17e319639ccc08f703799349531f54e166de392b8a6bdfd68383ab0",
+      "version_id": "4438fe88-e6f8-54be-8a7f-0618a0f5a69b",
+      "locked": false,
+      "metadata": {}
+    },
+    {
+      "logical_id": "scene-3",
+      "kind": "scene",
+      "position_key": "030",
+      "parent_logical_id": "book",
+      "title": "The Inn",
+      "content": "Julian Vane kept rooms above the inn, and it was there Mara found him, unpacked and unhurried. Rain ticked against the inn's dark glass while he poured himself a drink he did not offer to share.\n\n\"I was in the city all week,\" he said. \"Ask anyone on the night coach.\"\n\nHis questions came carelessly, and then one arrived that was not careless at all. \"The key you pried from under the floorboard,\" he said. \"Did it open anything worth my uncle dying for?\"\n\nMara had told no one about the floorboard. She let the silence hold until it had weight, and Julian filled it the way nervous men do, with talk of his uncle's habits and his own long absence. He smiled like a man rehearsing grief.\n",
+      "content_sha256": "4e7c232f6042971eca0239fabe420fcbe65c20771dffb4ef0118c5ea4ea0ea26",
+      "version_id": "c3be0842-413e-5481-9588-661c44d633a8",
+      "locked": false,
+      "metadata": {}
+    },
+    {
+      "logical_id": "scene-4",
+      "kind": "scene",
+      "position_key": "040",
+      "parent_logical_id": "book",
+      "title": "The West Vault",
+      "content": "The west vault crouched behind the cellar stair, iron-faced and older than the house above it. Dr. Hale, who had examined the body before first light, met them at the vault door with the constable. The vault lock took the key in two turns, once left to lift the wards, once right to draw the bolt.\n\nInside lay ledgers, deeds, and a new will, signed and witnessed a month ago, that named no nephew at all.\n\nSomewhere above them Bruno's bark rolled down the corridor, and Mara read the will twice before she spoke.\n\nAs for the groundskeeper, the constable was plain on the matter: Tomas Reyes had spent that same hour at the village forge, and half the village could swear to it.\n",
+      "content_sha256": "f91c6cd1f96a3ce9ad584063a0847b792882a6b807c341319559d83347a9b2e5",
+      "version_id": "d47398b3-afb2-5d42-ad1a-f374f89c46aa",
+      "locked": false,
+      "metadata": {}
+    },
+    {
+      "logical_id": "scene-5",
+      "kind": "scene",
+      "position_key": "050",
+      "parent_logical_id": "book",
+      "title": "The Accusation",
+      "content": "They gathered in the study at dusk, the lamps lit against the early dark. Mrs. Brandt, the cook, drew the curtains while the constable took the door.\n\nJulian drew out the gold watch and wound it, unhurried, as if time kept for him alone.\n\nMara laid the new will on the desk between them, still folded. \"Not a shilling for the nephew,\" Mrs. Brandt murmured from the window, before Mara had said a word of what the vault held.\n\n\"You knew about the floorboard,\" Mara said to Julian. \"You knew before I told anyone, because you watched him hide the key the night he died. The night you were not in the city.\"\n\nJulian's hand stopped on the watch stem. The rain had stopped too, and the room was very quiet.\n",
+      "content_sha256": "466f69629a983cdc9a21ed046d5d99bcfd3ef685e726612a1dcb0448a5b58ad3",
+      "version_id": "b784380a-3721-590f-b9e7-ce2e73b050d8",
+      "locked": false,
+      "metadata": {}
+    },
+    {
+      "logical_id": "scene-6",
+      "kind": "scene",
+      "position_key": "060",
+      "parent_logical_id": "book",
+      "title": "The Ledger Closes",
+      "content": "The constable took Julian down the front steps in the grey of morning, and Julian confessed before they reached the gate, in the flat voice of a man explaining arithmetic: the new will had left him nothing, and he had known it a month.\n\nMrs. Brandt saw the house closed room by room. Rain ticked against the glass as Mara finished her notes at Edmund's desk, in the study where it had begun.\n\nThere would be papers, and a trial, and the slow settling of the estate into other hands. The house kept its silence, and the case of Edmund Vane was closed.\n",
+      "content_sha256": "7015533870d718f95ae53598926413ee610f10127f04a08505e5bddea4edfe43",
+      "version_id": "b6ddf0b6-ee00-59c3-8411-84c55a07ad78",
+      "locked": false,
+      "metadata": {}
+    }
+  ]
+}

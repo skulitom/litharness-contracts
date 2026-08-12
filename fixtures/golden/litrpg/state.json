@@ -1,0 +1,631 @@
+{
+  "meta": {
+    "schema_version": "1.0.0",
+    "artifact_id": "5cc18f7d-1dc4-557d-a572-e0dd2cf32294",
+    "artifact_kind": "state_snapshot",
+    "created_at": "2026-08-12T00:00:00Z",
+    "actor": "fixture-builder",
+    "tool": {
+      "name": "litharness-contracts-fixtures",
+      "version": "0.1.0"
+    },
+    "source_revisions": [
+      {
+        "project_id": "f68b8076-56d4-52a6-be0d-50f36113ad69",
+        "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+        "branch_id": "c2c20280-e284-52f6-b8f5-9872de3af6da",
+        "logical_id": "book",
+        "kind": "manuscript_book",
+        "version_id": "cfb8482a-e846-59f0-a319-35c852c8ae8a"
+      }
+    ],
+    "dependencies": [],
+    "warnings": []
+  },
+  "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+  "branch_id": "c2c20280-e284-52f6-b8f5-9872de3af6da",
+  "revision_id": "cfb8482a-e846-59f0-a319-35c852c8ae8a",
+  "records": [
+    {
+      "record_id": "rec-rule-hp-ceiling",
+      "kind": "world_rule",
+      "subject": "system",
+      "predicate": "rule_hp_ceiling",
+      "value": "hp_current <= hp_max",
+      "story_position": {
+        "order_key": "s1"
+      },
+      "authority": "author_locked",
+      "pov_visibility": [],
+      "evidence": [
+        {
+          "source": {
+            "project_id": "f68b8076-56d4-52a6-be0d-50f36113ad69",
+            "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+            "branch_id": "c2c20280-e284-52f6-b8f5-9872de3af6da",
+            "logical_id": "scene-1",
+            "kind": "manuscript_scene",
+            "version_id": "529a4c49-6a35-5044-94a7-dd5df8eaf4a6"
+          },
+          "start": 288,
+          "end": 343,
+          "content_sha256": "a1d07ca5bb07ec025c71f8877a71a46d98271a7af8663464035f4363926bec5a"
+        }
+      ],
+      "predicate_registry_version": "fixture.v1"
+    },
+    {
+      "record_id": "rec-rule-level-monotonic",
+      "kind": "world_rule",
+      "subject": "system",
+      "predicate": "rule_level_monotonic",
+      "value": "level never decreases except on death",
+      "story_position": {
+        "order_key": "s1"
+      },
+      "authority": "author_locked",
+      "pov_visibility": [],
+      "evidence": [
+        {
+          "source": {
+            "project_id": "f68b8076-56d4-52a6-be0d-50f36113ad69",
+            "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+            "branch_id": "c2c20280-e284-52f6-b8f5-9872de3af6da",
+            "logical_id": "scene-1",
+            "kind": "manuscript_scene",
+            "version_id": "529a4c49-6a35-5044-94a7-dd5df8eaf4a6"
+          },
+          "start": 389,
+          "end": 441,
+          "content_sha256": "edaf20b023b6e62f93e5f5a6eb1e1ad30ded46f8fd26d1c4ca4d3e581be673ee"
+        }
+      ],
+      "predicate_registry_version": "fixture.v1"
+    },
+    {
+      "record_id": "rec-thread-debt",
+      "kind": "thread",
+      "subject": "debt_to_marrow",
+      "predicate": "thread_status",
+      "value": "open",
+      "story_position": {
+        "order_key": "s1"
+      },
+      "authority": "accepted_canon",
+      "pov_visibility": [],
+      "evidence": [
+        {
+          "source": {
+            "project_id": "f68b8076-56d4-52a6-be0d-50f36113ad69",
+            "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+            "branch_id": "c2c20280-e284-52f6-b8f5-9872de3af6da",
+            "logical_id": "scene-1",
+            "kind": "manuscript_scene",
+            "version_id": "529a4c49-6a35-5044-94a7-dd5df8eaf4a6"
+          },
+          "start": 102,
+          "end": 147,
+          "content_sha256": "119240c1ebe82cd5b2864abb404b79453847101d9917e57ebc89761fe7e7b7ff"
+        }
+      ],
+      "predicate_registry_version": "fixture.v1"
+    },
+    {
+      "record_id": "rec-s1-status",
+      "kind": "assertion",
+      "subject": "rook",
+      "predicate": "status_snapshot",
+      "value": {
+        "level": 3,
+        "hp": 24,
+        "hp_max": 30,
+        "mp": 8,
+        "mp_max": 10,
+        "gold": 45
+      },
+      "story_position": {
+        "order_key": "s1"
+      },
+      "authority": "accepted_canon",
+      "pov_visibility": [],
+      "evidence": [
+        {
+          "source": {
+            "project_id": "f68b8076-56d4-52a6-be0d-50f36113ad69",
+            "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+            "branch_id": "c2c20280-e284-52f6-b8f5-9872de3af6da",
+            "logical_id": "scene-1",
+            "kind": "manuscript_scene",
+            "version_id": "529a4c49-6a35-5044-94a7-dd5df8eaf4a6"
+          },
+          "start": 495,
+          "end": 549,
+          "content_sha256": "073b8ae563e905c9198518de578150c4fe8be7da37cd01ce081ecfbe80ea65c0"
+        }
+      ],
+      "predicate_registry_version": "fixture.v1"
+    },
+    {
+      "record_id": "rec-ev-buy-lantern",
+      "kind": "event",
+      "subject": "rook",
+      "predicate": "purchased",
+      "value": {
+        "item": "storm_lantern",
+        "cost_gold": 20
+      },
+      "story_position": {
+        "order_key": "s2"
+      },
+      "authority": "accepted_canon",
+      "pov_visibility": [],
+      "evidence": [
+        {
+          "source": {
+            "project_id": "f68b8076-56d4-52a6-be0d-50f36113ad69",
+            "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+            "branch_id": "c2c20280-e284-52f6-b8f5-9872de3af6da",
+            "logical_id": "scene-2",
+            "kind": "manuscript_scene",
+            "version_id": "197c3346-4da0-5919-b050-a6a56598f0c1"
+          },
+          "start": 171,
+          "end": 206,
+          "content_sha256": "11ef61a079261fb664fed0ef6beabff55072a6732aea0042ecd835d991ae01ca"
+        }
+      ],
+      "predicate_registry_version": "fixture.v1"
+    },
+    {
+      "record_id": "rec-s2-status",
+      "kind": "assertion",
+      "subject": "rook",
+      "predicate": "status_snapshot",
+      "value": {
+        "level": 3,
+        "hp": 24,
+        "hp_max": 30,
+        "mp": 8,
+        "mp_max": 10,
+        "gold": 25
+      },
+      "story_position": {
+        "order_key": "s2"
+      },
+      "authority": "accepted_canon",
+      "pov_visibility": [],
+      "evidence": [
+        {
+          "source": {
+            "project_id": "f68b8076-56d4-52a6-be0d-50f36113ad69",
+            "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+            "branch_id": "c2c20280-e284-52f6-b8f5-9872de3af6da",
+            "logical_id": "scene-2",
+            "kind": "manuscript_scene",
+            "version_id": "197c3346-4da0-5919-b050-a6a56598f0c1"
+          },
+          "start": 467,
+          "end": 521,
+          "content_sha256": "2ee9b00d6906d547bfa44a760fd994939e2065ea6bc5096ef1cc63094491190f"
+        }
+      ],
+      "predicate_registry_version": "fixture.v1"
+    },
+    {
+      "record_id": "rec-ev-toll",
+      "kind": "event",
+      "subject": "rook",
+      "predicate": "paid",
+      "value": {
+        "to": "gatekeeper",
+        "amount_gold": 5
+      },
+      "story_position": {
+        "order_key": "s3"
+      },
+      "authority": "accepted_canon",
+      "pov_visibility": [],
+      "evidence": [
+        {
+          "source": {
+            "project_id": "f68b8076-56d4-52a6-be0d-50f36113ad69",
+            "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+            "branch_id": "c2c20280-e284-52f6-b8f5-9872de3af6da",
+            "logical_id": "scene-3",
+            "kind": "manuscript_scene",
+            "version_id": "b4fd135c-f9c1-5397-b7fe-96e466be0add"
+          },
+          "start": 72,
+          "end": 101,
+          "content_sha256": "75899bcb1e5630192149bee381a2bb73ff0c267095f4594b50889a43ce55a31b"
+        }
+      ],
+      "predicate_registry_version": "fixture.v1"
+    },
+    {
+      "record_id": "rec-ev-shadowstep-use",
+      "kind": "event",
+      "subject": "rook",
+      "predicate": "used_skill",
+      "value": {
+        "skill": "shadowstep"
+      },
+      "story_position": {
+        "order_key": "s3"
+      },
+      "authority": "accepted_canon",
+      "pov_visibility": [],
+      "evidence": [
+        {
+          "source": {
+            "project_id": "f68b8076-56d4-52a6-be0d-50f36113ad69",
+            "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+            "branch_id": "c2c20280-e284-52f6-b8f5-9872de3af6da",
+            "logical_id": "scene-3",
+            "kind": "manuscript_scene",
+            "version_id": "b4fd135c-f9c1-5397-b7fe-96e466be0add"
+          },
+          "start": 353,
+          "end": 400,
+          "content_sha256": "84be6e08740079fb2b367b9a0810360e916cf22732532d4f4ff93b81f3e6a766"
+        }
+      ],
+      "predicate_registry_version": "fixture.v1"
+    },
+    {
+      "record_id": "rec-s3-status",
+      "kind": "assertion",
+      "subject": "rook",
+      "predicate": "status_snapshot",
+      "value": {
+        "level": 3,
+        "hp": 22,
+        "hp_max": 30,
+        "mp": 6,
+        "mp_max": 10,
+        "gold": 15
+      },
+      "story_position": {
+        "order_key": "s3"
+      },
+      "authority": "accepted_canon",
+      "pov_visibility": [],
+      "evidence": [
+        {
+          "source": {
+            "project_id": "f68b8076-56d4-52a6-be0d-50f36113ad69",
+            "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+            "branch_id": "c2c20280-e284-52f6-b8f5-9872de3af6da",
+            "logical_id": "scene-3",
+            "kind": "manuscript_scene",
+            "version_id": "b4fd135c-f9c1-5397-b7fe-96e466be0add"
+          },
+          "start": 457,
+          "end": 511,
+          "content_sha256": "89de3d3b99c7f7b2cf5e3c3c903835c5e6eeca0b796f5075eeab455523a13e88"
+        }
+      ],
+      "predicate_registry_version": "fixture.v1",
+      "note": "Gold 15 is what the prose says; the ledger-correct value is 20. See f-gold-ledger."
+    },
+    {
+      "record_id": "rec-ev-potion",
+      "kind": "event",
+      "subject": "rook",
+      "predicate": "consumed",
+      "value": {
+        "item": "red_potion"
+      },
+      "story_position": {
+        "order_key": "s4"
+      },
+      "authority": "accepted_canon",
+      "pov_visibility": [],
+      "evidence": [
+        {
+          "source": {
+            "project_id": "f68b8076-56d4-52a6-be0d-50f36113ad69",
+            "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+            "branch_id": "c2c20280-e284-52f6-b8f5-9872de3af6da",
+            "logical_id": "scene-4",
+            "kind": "manuscript_scene",
+            "version_id": "7907ede4-bd50-5b05-a151-b5bf0e7b4ceb"
+          },
+          "start": 253,
+          "end": 286,
+          "content_sha256": "b762997a24d01e22fb8af5639e3fd88a5db91953d1093a8ab8f7d6d5c8732793"
+        }
+      ],
+      "predicate_registry_version": "fixture.v1"
+    },
+    {
+      "record_id": "rec-ev-level4",
+      "kind": "event",
+      "subject": "rook",
+      "predicate": "leveled_up",
+      "value": {
+        "to_level": 4
+      },
+      "story_position": {
+        "order_key": "s4"
+      },
+      "authority": "accepted_canon",
+      "pov_visibility": [],
+      "evidence": [
+        {
+          "source": {
+            "project_id": "f68b8076-56d4-52a6-be0d-50f36113ad69",
+            "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+            "branch_id": "c2c20280-e284-52f6-b8f5-9872de3af6da",
+            "logical_id": "scene-4",
+            "kind": "manuscript_scene",
+            "version_id": "7907ede4-bd50-5b05-a151-b5bf0e7b4ceb"
+          },
+          "start": 340,
+          "end": 366,
+          "content_sha256": "dab19017f1e68f7375ea9e52cbca7779920e8982a151186a1a6f264aa399c0fb"
+        }
+      ],
+      "predicate_registry_version": "fixture.v1"
+    },
+    {
+      "record_id": "rec-ev-silver-key",
+      "kind": "event",
+      "subject": "rook",
+      "predicate": "used_item",
+      "value": {
+        "item": "silver_key"
+      },
+      "story_position": {
+        "order_key": "s4"
+      },
+      "authority": "accepted_canon",
+      "pov_visibility": [],
+      "evidence": [
+        {
+          "source": {
+            "project_id": "f68b8076-56d4-52a6-be0d-50f36113ad69",
+            "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+            "branch_id": "c2c20280-e284-52f6-b8f5-9872de3af6da",
+            "logical_id": "scene-4",
+            "kind": "manuscript_scene",
+            "version_id": "7907ede4-bd50-5b05-a151-b5bf0e7b4ceb"
+          },
+          "start": 505,
+          "end": 548,
+          "content_sha256": "2e3067b2b94b7ad57e6fb69f1264e85b40051031a0f65eaef44663c2f50601ad"
+        }
+      ],
+      "predicate_registry_version": "fixture.v1",
+      "note": "No acquisition event exists anywhere. See f-silver-key-ghost."
+    },
+    {
+      "record_id": "rec-s4-status",
+      "kind": "assertion",
+      "subject": "rook",
+      "predicate": "status_snapshot",
+      "value": {
+        "level": 4,
+        "hp": 34,
+        "hp_max": 30,
+        "mp": 6,
+        "mp_max": 10,
+        "gold": 15
+      },
+      "story_position": {
+        "order_key": "s4"
+      },
+      "authority": "accepted_canon",
+      "pov_visibility": [],
+      "evidence": [
+        {
+          "source": {
+            "project_id": "f68b8076-56d4-52a6-be0d-50f36113ad69",
+            "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+            "branch_id": "c2c20280-e284-52f6-b8f5-9872de3af6da",
+            "logical_id": "scene-4",
+            "kind": "manuscript_scene",
+            "version_id": "7907ede4-bd50-5b05-a151-b5bf0e7b4ceb"
+          },
+          "start": 580,
+          "end": 634,
+          "content_sha256": "0159f224113f811bb3b4a73c1a6a6596ce4f2346134781db98978eba9d5ba95f"
+        }
+      ],
+      "predicate_registry_version": "fixture.v1",
+      "note": "HP 34/30 violates rec-rule-hp-ceiling. See f-hp-over-max."
+    },
+    {
+      "record_id": "rec-ev-shadowstep-acq",
+      "kind": "event",
+      "subject": "rook",
+      "predicate": "acquired_skill",
+      "value": {
+        "skill": "shadowstep",
+        "level": 1
+      },
+      "story_position": {
+        "order_key": "s5"
+      },
+      "authority": "accepted_canon",
+      "pov_visibility": [],
+      "evidence": [
+        {
+          "source": {
+            "project_id": "f68b8076-56d4-52a6-be0d-50f36113ad69",
+            "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+            "branch_id": "c2c20280-e284-52f6-b8f5-9872de3af6da",
+            "logical_id": "scene-5",
+            "kind": "manuscript_scene",
+            "version_id": "0bf462be-73fb-5bfe-9ef9-57a7e059057e"
+          },
+          "start": 178,
+          "end": 208,
+          "content_sha256": "bc5b8b7394eb36f948205642ca478034dc3fee16d35107002f5cb1ba9699864c"
+        }
+      ],
+      "predicate_registry_version": "fixture.v1"
+    },
+    {
+      "record_id": "rec-s5-status",
+      "kind": "assertion",
+      "subject": "rook",
+      "predicate": "status_snapshot",
+      "value": {
+        "level": 3,
+        "hp": 27,
+        "hp_max": 30,
+        "mp": 8,
+        "mp_max": 10,
+        "gold": 15
+      },
+      "story_position": {
+        "order_key": "s5"
+      },
+      "authority": "accepted_canon",
+      "pov_visibility": [],
+      "evidence": [
+        {
+          "source": {
+            "project_id": "f68b8076-56d4-52a6-be0d-50f36113ad69",
+            "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+            "branch_id": "c2c20280-e284-52f6-b8f5-9872de3af6da",
+            "logical_id": "scene-5",
+            "kind": "manuscript_scene",
+            "version_id": "0bf462be-73fb-5bfe-9ef9-57a7e059057e"
+          },
+          "start": 381,
+          "end": 435,
+          "content_sha256": "75ccba3c8dd30b82331206537accc78316cf28e7df3420b564d21899e8c77ee2"
+        }
+      ],
+      "predicate_registry_version": "fixture.v1",
+      "note": "Level 3 after Level 4 with no death. See f-level-regression."
+    },
+    {
+      "record_id": "rec-s5-quest-completed",
+      "kind": "assertion",
+      "subject": "quest_toll_gate",
+      "predicate": "quest_status",
+      "value": "completed",
+      "story_position": {
+        "order_key": "s5"
+      },
+      "authority": "accepted_canon",
+      "pov_visibility": [],
+      "evidence": [
+        {
+          "source": {
+            "project_id": "f68b8076-56d4-52a6-be0d-50f36113ad69",
+            "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+            "branch_id": "c2c20280-e284-52f6-b8f5-9872de3af6da",
+            "logical_id": "scene-5",
+            "kind": "manuscript_scene",
+            "version_id": "0bf462be-73fb-5bfe-9ef9-57a7e059057e"
+          },
+          "start": 541,
+          "end": 575,
+          "content_sha256": "0f433509fa27eb94cde99739010cc56fbaa191a823cf802c6301aa612f828cfb"
+        }
+      ],
+      "predicate_registry_version": "fixture.v1",
+      "note": "Marked completed one scene before the completion event. See f-quest-early-complete."
+    },
+    {
+      "record_id": "rec-ev-debt-paid",
+      "kind": "event",
+      "subject": "rook",
+      "predicate": "paid",
+      "value": {
+        "to": "marrow",
+        "amount_gold": 15
+      },
+      "story_position": {
+        "order_key": "s6"
+      },
+      "authority": "accepted_canon",
+      "pov_visibility": [],
+      "evidence": [
+        {
+          "source": {
+            "project_id": "f68b8076-56d4-52a6-be0d-50f36113ad69",
+            "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+            "branch_id": "c2c20280-e284-52f6-b8f5-9872de3af6da",
+            "logical_id": "scene-6",
+            "kind": "manuscript_scene",
+            "version_id": "90125004-cbbb-51e6-b13d-742508b41858"
+          },
+          "start": 175,
+          "end": 223,
+          "content_sha256": "6b388d8482a388d7bf5f8db0004f3870edf2e503a538732fe4c8031d2167edef"
+        }
+      ],
+      "predicate_registry_version": "fixture.v1"
+    },
+    {
+      "record_id": "rec-ev-quest-complete",
+      "kind": "event",
+      "subject": "quest_toll_gate",
+      "predicate": "quest_completed",
+      "value": {
+        "quest": "the_toll_gate"
+      },
+      "story_position": {
+        "order_key": "s6"
+      },
+      "authority": "accepted_canon",
+      "pov_visibility": [],
+      "evidence": [
+        {
+          "source": {
+            "project_id": "f68b8076-56d4-52a6-be0d-50f36113ad69",
+            "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+            "branch_id": "c2c20280-e284-52f6-b8f5-9872de3af6da",
+            "logical_id": "scene-6",
+            "kind": "manuscript_scene",
+            "version_id": "90125004-cbbb-51e6-b13d-742508b41858"
+          },
+          "start": 305,
+          "end": 354,
+          "content_sha256": "1f1dac0070fbbae6d1acc367406595f03d3cbd83ee18ff2510f90a90e38e543e"
+        }
+      ],
+      "predicate_registry_version": "fixture.v1"
+    },
+    {
+      "record_id": "rec-s6-status",
+      "kind": "assertion",
+      "subject": "rook",
+      "predicate": "status_snapshot",
+      "value": {
+        "level": 4,
+        "hp": 27,
+        "hp_max": 30,
+        "mp": 8,
+        "mp_max": 10,
+        "gold": 0
+      },
+      "story_position": {
+        "order_key": "s6"
+      },
+      "authority": "accepted_canon",
+      "pov_visibility": [],
+      "evidence": [
+        {
+          "source": {
+            "project_id": "f68b8076-56d4-52a6-be0d-50f36113ad69",
+            "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+            "branch_id": "c2c20280-e284-52f6-b8f5-9872de3af6da",
+            "logical_id": "scene-6",
+            "kind": "manuscript_scene",
+            "version_id": "90125004-cbbb-51e6-b13d-742508b41858"
+          },
+          "start": 458,
+          "end": 511,
+          "content_sha256": "db847d699d69703346914e8ac12accb3f100843d819fc19159634052908a873f"
+        }
+      ],
+      "predicate_registry_version": "fixture.v1"
+    }
+  ]
+}

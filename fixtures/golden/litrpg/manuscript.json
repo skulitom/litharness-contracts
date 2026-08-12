@@ -1,0 +1,111 @@
+{
+  "meta": {
+    "schema_version": "1.0.0",
+    "artifact_id": "7be4b490-98ea-5484-8fc8-87f2d4d95d11",
+    "artifact_kind": "manuscript_revision",
+    "created_at": "2026-08-12T00:00:00Z",
+    "actor": "fixture-builder",
+    "tool": {
+      "name": "litharness-contracts-fixtures",
+      "version": "0.1.0"
+    },
+    "source_revisions": [
+      {
+        "project_id": "f68b8076-56d4-52a6-be0d-50f36113ad69",
+        "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+        "branch_id": "c2c20280-e284-52f6-b8f5-9872de3af6da",
+        "logical_id": "book",
+        "kind": "manuscript_book",
+        "version_id": "cfb8482a-e846-59f0-a319-35c852c8ae8a"
+      }
+    ],
+    "dependencies": [],
+    "warnings": []
+  },
+  "book_id": "3201f040-cf9c-59b7-abbe-1357291694a7",
+  "branch_id": "c2c20280-e284-52f6-b8f5-9872de3af6da",
+  "revision_id": "cfb8482a-e846-59f0-a319-35c852c8ae8a",
+  "nodes": [
+    {
+      "logical_id": "book",
+      "kind": "book",
+      "position_key": "000",
+      "title": "The Toll Gate",
+      "version_id": "cfb8482a-e846-59f0-a319-35c852c8ae8a",
+      "locked": false,
+      "metadata": {}
+    },
+    {
+      "logical_id": "scene-1",
+      "kind": "scene",
+      "position_key": "010",
+      "parent_logical_id": "book",
+      "title": "Under the Third Arch",
+      "content": "Rook woke under the toll road's third arch with the System's pale script already hanging in the dark. The debt to Marrow comes due at the toll gate, it reminded him, as if he could forget owing that particular man anything.\n\nThe System kept its one iron rule where bodies were concerned: no draught nor blessing carries a body past its ceiling. And its second, where souls were concerned: levels once granted are not recalled, short of dying. Everything else, Rook had learned, was negotiable.\n\n[STATUS] Rook — Level 3 | HP 24/30 | MP 8/10 | Gold 45\n[INVENTORY] rusted dagger, rope, waybread x2\n[SKILLS] Appraise Lv1\n[QUESTS] The Toll Gate — active\n\nHe counted his coin twice and started walking toward the gate before the sun could find him.\n",
+      "content_sha256": "47ca0ff28a67981c674d7cb04cdecfc5367fd5ee8c26c785f74b43caec4e2594",
+      "version_id": "529a4c49-6a35-5044-94a7-dd5df8eaf4a6",
+      "locked": false,
+      "metadata": {}
+    },
+    {
+      "logical_id": "scene-2",
+      "kind": "scene",
+      "position_key": "020",
+      "parent_logical_id": "book",
+      "title": "The Night Market",
+      "content": "The night market under the aqueduct sold everything a debtor might need and nothing he could afford. Rook stopped at a barrelhead stall where an old woman sold light.\n\nHe counted twenty gold onto the barrel for a storm lantern, glass thick as a knuckle, and she threw in a strap of cured leather for nothing because, she said, he had the look of a man walking somewhere dark.\n\nYou feel stronger, the System offered, apropos of nothing. No number anywhere had moved.\n\n[STATUS] Rook — Level 3 | HP 24/30 | MP 8/10 | Gold 25\n[INVENTORY] rusted dagger, rope, waybread x2, storm lantern\n[SKILLS] Appraise Lv1\n[QUESTS] The Toll Gate — active\n\nAppraise put the lantern's true worth at thirty-one gold. For once, Rook was ahead.\n",
+      "content_sha256": "33252a1c84e41ed721190eede2068c5abbee66abab394af6fb4d62a50a70f00e",
+      "version_id": "197c3346-4da0-5919-b050-a6a56598f0c1",
+      "locked": false,
+      "metadata": {}
+    },
+    {
+      "logical_id": "scene-3",
+      "kind": "scene",
+      "position_key": "030",
+      "parent_logical_id": "book",
+      "title": "The Outer Gate",
+      "content": "The outer gate took its cut like everything else on the toll road. Rook paid the gatekeeper five gold at the wicket and got a chalk mark on his sleeve for it, good for one passage and no refunds.\n\nBeyond the gate the braziers ran short of the wall, and the gap between light and stone was exactly the kind of dark the lantern was for. He left it unlit. Rook slipped between the braziers on Shadowstep and the watchman saw nothing, not even the chalk mark.\n\n[STATUS] Rook — Level 3 | HP 22/30 | MP 6/10 | Gold 15\n[INVENTORY] rusted dagger, rope, waybread x2, storm lantern\n[SKILLS] Appraise Lv1\n[QUESTS] The Toll Gate — active\n\nTwo ribs ached where the wicket's crowd had pressed him into the iron. He walked on anyway.\n",
+      "content_sha256": "bd26719f061bd2e279b5b58357a395aa0260d05436a808fd4a5cf0b477fa001b",
+      "version_id": "b4fd135c-f9c1-5397-b7fe-96e466be0add",
+      "locked": false,
+      "metadata": {}
+    },
+    {
+      "logical_id": "scene-4",
+      "kind": "scene",
+      "position_key": "040",
+      "parent_logical_id": "book",
+      "title": "The Culvert",
+      "content": "The thing in the culvert had been a toll hound once, before somebody stopped feeding it and the road's older tenants started. It came at Rook low and quiet, and the fight was short, ugly, and mostly rope.\n\nAfterward he sat against the culvert mouth and drank the red potion to the dregs, and warmth climbed his ribs like a tide coming in.\n\nThe System chimed: Level 4. The hound's collar tag alone would settle a tenth of what he owed.\n\nAt the culvert's far end a wicket gate barred the maintenance stair. He turned the silver key in the wicket gate and it swung without a sound.\n\n[STATUS] Rook — Level 4 | HP 34/30 | MP 6/10 | Gold 15\n[INVENTORY] rusted dagger, rope, waybread x2, storm lantern, hound's collar tag\n[SKILLS] Appraise Lv1\n[QUESTS] The Toll Gate — active\n\nThe stair went up into clean air. Rook climbed.\n",
+      "content_sha256": "9f289c3cc4643edcf7a8627aacd4710dc4060f611533943c1523a98404de2440",
+      "version_id": "7907ede4-bd50-5b05-a151-b5bf0e7b4ceb",
+      "locked": false,
+      "metadata": {}
+    },
+    {
+      "logical_id": "scene-5",
+      "kind": "scene",
+      "position_key": "050",
+      "parent_logical_id": "book",
+      "title": "The Gatehouse Roof",
+      "content": "Rook came out of the maintenance stair onto the gatehouse roof with the whole toll road unrolled below him, brazier by brazier, all the way back to the arch he had slept under.\n\nSkill acquired: Shadowstep Lv1, the System announced, in the tone of a clerk filing something long overdue.\n\nHe ate the last of the waybread and let his ribs knit while the sky went from black to iron.\n\n[STATUS] Rook — Level 3 | HP 27/30 | MP 8/10 | Gold 15\n[INVENTORY] rusted dagger, rope, storm lantern, hound's collar tag\n[SKILLS] Appraise Lv1, Shadowstep Lv1\n[QUESTS] The Toll Gate — completed\n\nBelow, at the inner gate, a lamp burned in the tollkeeper's window. Marrow kept early hours when money was coming.\n",
+      "content_sha256": "eff1a7f191216c989ae34da32c4c701470366e7ccad313f496ffc1e7decd992d",
+      "version_id": "0bf462be-73fb-5bfe-9ef9-57a7e059057e",
+      "locked": false,
+      "metadata": {}
+    },
+    {
+      "logical_id": "scene-6",
+      "kind": "scene",
+      "position_key": "060",
+      "parent_logical_id": "book",
+      "title": "Marrow's Counter",
+      "content": "Marrow weighed the collar tag in one scarred hand and Rook's chalk mark in the other, and named a price that was almost fair, which from Marrow was a kind of affection.\n\nRook counted the last fifteen gold into Marrow's palm, and the tag went with it, and the debt died there on the counter between them.\n\nThe System chimed: quest complete — The Toll Gate. Ahead the road ran north out of the toll lands entirely, and nobody on it held paper on Rook Harrow.\n\n[STATUS] Rook — Level 4 | HP 27/30 | MP 8/10 | Gold 0\n[INVENTORY] rusted dagger, rope, storm lantern\n[SKILLS] Appraise Lv1, Shadowstep Lv1\n[QUESTS] —\n\nHe lit the storm lantern for no reason at all except that it was his, and walked north into the dark he had paid for.\n",
+      "content_sha256": "5c41f2b70f70c3afa8740de190c587b7c750a0aeee3a59c8eef9a444a7a6ef4c",
+      "version_id": "90125004-cbbb-51e6-b13d-742508b41858",
+      "locked": false,
+      "metadata": {}
+    }
+  ]
+}

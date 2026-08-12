@@ -1,0 +1,305 @@
+{
+  "meta": {
+    "schema_version": "1.0.0",
+    "artifact_id": "c444d141-b9d4-55a1-8b8b-60e0c9fde2af",
+    "artifact_kind": "gold_context_suite",
+    "created_at": "2026-08-12T00:00:00Z",
+    "actor": "fixture-builder",
+    "tool": {
+      "name": "litharness-contracts-fixtures",
+      "version": "0.1.0"
+    },
+    "source_revisions": [
+      {
+        "project_id": "9513d5ea-6226-54b5-a306-a3a01a6dc27f",
+        "book_id": "0e0eb0e5-89f9-5851-831c-596f4627bad7",
+        "branch_id": "8ea92b37-6188-5ae2-b517-20c57eff7b0a",
+        "logical_id": "book",
+        "kind": "manuscript_book",
+        "version_id": "1462725a-b143-5cb1-9a6b-23a63b11549b"
+      }
+    ],
+    "dependencies": [],
+    "warnings": []
+  },
+  "fixture_id": "mystery",
+  "cases": [
+    {
+      "query": {
+        "meta": {
+          "schema_version": "1.0.0",
+          "artifact_id": "2e547c11-c58a-5df4-bc26-ca8f8c72935b",
+          "artifact_kind": "context_query",
+          "created_at": "2026-08-12T00:00:00Z",
+          "actor": "fixture-builder",
+          "tool": {
+            "name": "litharness-contracts-fixtures",
+            "version": "0.1.0"
+          },
+          "source_revisions": [
+            {
+              "project_id": "9513d5ea-6226-54b5-a306-a3a01a6dc27f",
+              "book_id": "0e0eb0e5-89f9-5851-831c-596f4627bad7",
+              "branch_id": "8ea92b37-6188-5ae2-b517-20c57eff7b0a",
+              "logical_id": "book",
+              "kind": "manuscript_book",
+              "version_id": "1462725a-b143-5cb1-9a6b-23a63b11549b"
+            }
+          ],
+          "dependencies": [],
+          "warnings": []
+        },
+        "query_id": "q1-draft-scene-6",
+        "operation": "draft_scene",
+        "target": {
+          "project_id": "9513d5ea-6226-54b5-a306-a3a01a6dc27f",
+          "book_id": "0e0eb0e5-89f9-5851-831c-596f4627bad7",
+          "branch_id": "8ea92b37-6188-5ae2-b517-20c57eff7b0a",
+          "logical_id": "scene-6",
+          "kind": "manuscript_scene",
+          "version_id": "b6ddf0b6-ee00-59c3-8411-84c55a07ad78"
+        },
+        "token_budget": 6000,
+        "pov_character_id": "mara",
+        "intent": "Draft the resolution scene: Julian is taken, motive revealed.",
+        "referenced_entities": [],
+        "referenced_threads": [],
+        "hard_requirements": [],
+        "exclusions": [],
+        "policy_version": "gold.v1"
+      },
+      "mandatory": [
+        {
+          "reason": "Core mechanism of the reveal.",
+          "ref": {
+            "project_id": "9513d5ea-6226-54b5-a306-a3a01a6dc27f",
+            "book_id": "0e0eb0e5-89f9-5851-831c-596f4627bad7",
+            "branch_id": "8ea92b37-6188-5ae2-b517-20c57eff7b0a",
+            "logical_id": "rec-key-opens-vault",
+            "kind": "assertion"
+          }
+        },
+        {
+          "reason": "Motive; must be exact prose evidence.",
+          "span": {
+            "source": {
+              "project_id": "9513d5ea-6226-54b5-a306-a3a01a6dc27f",
+              "book_id": "0e0eb0e5-89f9-5851-831c-596f4627bad7",
+              "branch_id": "8ea92b37-6188-5ae2-b517-20c57eff7b0a",
+              "logical_id": "scene-4",
+              "kind": "manuscript_scene",
+              "version_id": "d47398b3-afb2-5d42-ad1a-f374f89c46aa"
+            },
+            "start": 330,
+            "end": 374,
+            "content_sha256": "aba02f36d10a7f4b0eaa63466b2bfe6d2a060a61136319cd699f3f6e61178cb5"
+          }
+        },
+        {
+          "reason": "Open thread the scene should resolve or acknowledge.",
+          "ref": {
+            "project_id": "9513d5ea-6226-54b5-a306-a3a01a6dc27f",
+            "book_id": "0e0eb0e5-89f9-5851-831c-596f4627bad7",
+            "branch_id": "8ea92b37-6188-5ae2-b517-20c57eff7b0a",
+            "logical_id": "rec-letter-promise",
+            "kind": "thread"
+          }
+        },
+        {
+          "reason": "Objective truth behind the lie.",
+          "ref": {
+            "project_id": "9513d5ea-6226-54b5-a306-a3a01a6dc27f",
+            "book_id": "0e0eb0e5-89f9-5851-831c-596f4627bad7",
+            "branch_id": "8ea92b37-6188-5ae2-b517-20c57eff7b0a",
+            "logical_id": "rec-julian-at-house",
+            "kind": "state_event"
+          }
+        }
+      ],
+      "forbidden": [
+        {
+          "reason": "POV leak: Mara never learns that Brandt knows the letter's contents.",
+          "ref": {
+            "project_id": "9513d5ea-6226-54b5-a306-a3a01a6dc27f",
+            "book_id": "0e0eb0e5-89f9-5851-831c-596f4627bad7",
+            "branch_id": "8ea92b37-6188-5ae2-b517-20c57eff7b0a",
+            "logical_id": "rec-brandt-knows-letter",
+            "kind": "knowledge"
+          }
+        }
+      ],
+      "notes": "Distant-callback case: mandatory items span scenes 1, 2, and 4."
+    },
+    {
+      "query": {
+        "meta": {
+          "schema_version": "1.0.0",
+          "artifact_id": "768c3093-72ef-50f3-acfe-d92c9b298acd",
+          "artifact_kind": "context_query",
+          "created_at": "2026-08-12T00:00:00Z",
+          "actor": "fixture-builder",
+          "tool": {
+            "name": "litharness-contracts-fixtures",
+            "version": "0.1.0"
+          },
+          "source_revisions": [
+            {
+              "project_id": "9513d5ea-6226-54b5-a306-a3a01a6dc27f",
+              "book_id": "0e0eb0e5-89f9-5851-831c-596f4627bad7",
+              "branch_id": "8ea92b37-6188-5ae2-b517-20c57eff7b0a",
+              "logical_id": "book",
+              "kind": "manuscript_book",
+              "version_id": "1462725a-b143-5cb1-9a6b-23a63b11549b"
+            }
+          ],
+          "dependencies": [],
+          "warnings": []
+        },
+        "query_id": "q2-evaluate-timeline",
+        "operation": "evaluate",
+        "target": {
+          "project_id": "9513d5ea-6226-54b5-a306-a3a01a6dc27f",
+          "book_id": "0e0eb0e5-89f9-5851-831c-596f4627bad7",
+          "branch_id": "8ea92b37-6188-5ae2-b517-20c57eff7b0a",
+          "logical_id": "book",
+          "kind": "manuscript_book",
+          "version_id": "1462725a-b143-5cb1-9a6b-23a63b11549b"
+        },
+        "token_budget": 4000,
+        "intent": "Check the timeline of the death morning.",
+        "referenced_entities": [],
+        "referenced_threads": [],
+        "hard_requirements": [],
+        "exclusions": [],
+        "policy_version": "gold.v1"
+      },
+      "mandatory": [
+        {
+          "reason": "One side of the contradiction.",
+          "span": {
+            "source": {
+              "project_id": "9513d5ea-6226-54b5-a306-a3a01a6dc27f",
+              "book_id": "0e0eb0e5-89f9-5851-831c-596f4627bad7",
+              "branch_id": "8ea92b37-6188-5ae2-b517-20c57eff7b0a",
+              "logical_id": "scene-2",
+              "kind": "manuscript_scene",
+              "version_id": "4438fe88-e6f8-54be-8a7f-0618a0f5a69b"
+            },
+            "start": 119,
+            "end": 155,
+            "content_sha256": "f72dee417553b29d0eb3def4d2d41c0fe5dd669b0624158b61116578788b19e8"
+          }
+        },
+        {
+          "reason": "Other side; packet must keep contradictory evidence together.",
+          "span": {
+            "source": {
+              "project_id": "9513d5ea-6226-54b5-a306-a3a01a6dc27f",
+              "book_id": "0e0eb0e5-89f9-5851-831c-596f4627bad7",
+              "branch_id": "8ea92b37-6188-5ae2-b517-20c57eff7b0a",
+              "logical_id": "scene-4",
+              "kind": "manuscript_scene",
+              "version_id": "d47398b3-afb2-5d42-ad1a-f374f89c46aa"
+            },
+            "start": 105,
+            "end": 149,
+            "content_sha256": "57ebca7ff550ed68eb09c7023a49cd10dd0e9cc6b88a5b8d4fba2ee764dddf09"
+          }
+        }
+      ],
+      "forbidden": [],
+      "notes": "Both sides of a cross-scene contradiction must be packed together (LongRangeContext PLAN section 9.2)."
+    },
+    {
+      "query": {
+        "meta": {
+          "schema_version": "1.0.0",
+          "artifact_id": "5e1d3d07-a98e-5be8-b347-c98a6e7d51ea",
+          "artifact_kind": "context_query",
+          "created_at": "2026-08-12T00:00:00Z",
+          "actor": "fixture-builder",
+          "tool": {
+            "name": "litharness-contracts-fixtures",
+            "version": "0.1.0"
+          },
+          "source_revisions": [
+            {
+              "project_id": "9513d5ea-6226-54b5-a306-a3a01a6dc27f",
+              "book_id": "0e0eb0e5-89f9-5851-831c-596f4627bad7",
+              "branch_id": "8ea92b37-6188-5ae2-b517-20c57eff7b0a",
+              "logical_id": "book",
+              "kind": "manuscript_book",
+              "version_id": "1462725a-b143-5cb1-9a6b-23a63b11549b"
+            }
+          ],
+          "dependencies": [],
+          "warnings": []
+        },
+        "query_id": "q3-repair-bruno",
+        "operation": "repair",
+        "target": {
+          "project_id": "9513d5ea-6226-54b5-a306-a3a01a6dc27f",
+          "book_id": "0e0eb0e5-89f9-5851-831c-596f4627bad7",
+          "branch_id": "8ea92b37-6188-5ae2-b517-20c57eff7b0a",
+          "logical_id": "scene-4",
+          "kind": "manuscript_scene",
+          "version_id": "d47398b3-afb2-5d42-ad1a-f374f89c46aa"
+        },
+        "token_budget": 2000,
+        "intent": "Repair finding f-state-bruno with minimal context.",
+        "referenced_entities": [],
+        "referenced_threads": [],
+        "hard_requirements": [],
+        "exclusions": [],
+        "policy_version": "gold.v1"
+      },
+      "mandatory": [
+        {
+          "reason": "Establishing evidence.",
+          "span": {
+            "source": {
+              "project_id": "9513d5ea-6226-54b5-a306-a3a01a6dc27f",
+              "book_id": "0e0eb0e5-89f9-5851-831c-596f4627bad7",
+              "branch_id": "8ea92b37-6188-5ae2-b517-20c57eff7b0a",
+              "logical_id": "scene-1",
+              "kind": "manuscript_scene",
+              "version_id": "c8d3d414-f5a5-50be-bc92-84aa441ee041"
+            },
+            "start": 676,
+            "end": 712,
+            "content_sha256": "526b42125820539e95b784d723759c6ed8695604b497ff07d4a91857f11a4b88"
+          }
+        },
+        {
+          "reason": "Manifestation span to repair.",
+          "span": {
+            "source": {
+              "project_id": "9513d5ea-6226-54b5-a306-a3a01a6dc27f",
+              "book_id": "0e0eb0e5-89f9-5851-831c-596f4627bad7",
+              "branch_id": "8ea92b37-6188-5ae2-b517-20c57eff7b0a",
+              "logical_id": "scene-4",
+              "kind": "manuscript_scene",
+              "version_id": "d47398b3-afb2-5d42-ad1a-f374f89c46aa"
+            },
+            "start": 427,
+            "end": 464,
+            "content_sha256": "80ee15e50a7168659ab35a01d8dbaa6b05bc05d8efa5fe248ba4b8106c2d8c55"
+          }
+        }
+      ],
+      "forbidden": [
+        {
+          "reason": "Irrelevant and POV-forbidden.",
+          "ref": {
+            "project_id": "9513d5ea-6226-54b5-a306-a3a01a6dc27f",
+            "book_id": "0e0eb0e5-89f9-5851-831c-596f4627bad7",
+            "branch_id": "8ea92b37-6188-5ae2-b517-20c57eff7b0a",
+            "logical_id": "rec-brandt-knows-letter",
+            "kind": "knowledge"
+          }
+        }
+      ],
+      "notes": "Only scene-4 local prose plus the establishing span is required; the rest of the book is noise."
+    }
+  ]
+}
