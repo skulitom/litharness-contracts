@@ -31,12 +31,32 @@ class RunManifest:
 
 
 class JobStatus(str, enum.Enum):
+    """Terminal states are deliberately three, not one.
+
+    `POISONED` and `PARKED` are both terminal and they mean different things to whoever
+    reads the queue. Poisoned is *exhaustion*: the unit retried until its attempt budget
+    ran out. Parked is a *decision*: the acceptance policy determined that no retry can
+    resolve the refusal — a director-locked node, a target that does not exist — and
+    stopped, deliberately, on the first attempt.
+
+    Collapsing them, which is what a consumer without `PARKED` has to do, tells an
+    operator "attempts exhausted" about a unit that never had a second attempt and never
+    should have. §4.2's ladder names park and escalate as distinct decisions from retry
+    for exactly this reason: "the failure mode is a parked unit plus an exception, never a
+    spin loop."
+
+    `PARKED` is a 1.2 addition. Enum additions are additive for readers — an unknown value
+    decodes to `UNKNOWN` — but not for writers, so a producer needs 1.2 to emit it.
+    """
+
     QUEUED = "queued"
     RUNNING = "running"
     SUCCEEDED = "succeeded"
     FAILED = "failed"
     CANCELLED = "cancelled"
     POISONED = "poisoned"
+    #: 1.2: terminal by policy decision rather than by attempt exhaustion.
+    PARKED = "parked"
     UNKNOWN = "unknown"
 
 

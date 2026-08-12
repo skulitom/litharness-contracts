@@ -192,3 +192,19 @@ def test_every_conductor_event_type_is_constructible() -> None:
         "BudgetExhausted",
     ):
         assert lc.EventType(value).value == value
+
+
+def test_parked_is_distinct_from_poisoned() -> None:
+    """1.2's addition, and the reason it is not cosmetic: an operator reading the queue
+    must be able to tell "the policy stopped this" from "this ran out of attempts"."""
+    assert lc.JobStatus("parked") is lc.JobStatus.PARKED
+    assert lc.JobStatus.PARKED is not lc.JobStatus.POISONED
+
+
+def test_a_one_one_reader_degrades_parked_rather_than_failing() -> None:
+    """Enum additions are additive for readers. A consumer built against 1.1 decodes an
+    unknown status to UNKNOWN instead of raising — which is what makes shipping this a
+    minor rather than a break."""
+    payload = _payload("job_record")
+    payload["status"] = "some_status_from_1_9"
+    assert lc.parse_artifact(lc.JobRecord, payload).status is lc.JobStatus.UNKNOWN
