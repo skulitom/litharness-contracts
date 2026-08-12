@@ -1,0 +1,70 @@
+{
+  "$defs": {
+    "GateKind": {
+      "enum": [
+        "shape",
+        "integrity",
+        "craft",
+        "budget",
+        "unknown"
+      ],
+      "type": "string"
+    },
+    "VerdictSource": {
+      "enum": [
+        "deterministic",
+        "calibrated_critic",
+        "uncalibrated_critic",
+        "human",
+        "model_self_report",
+        "unknown"
+      ],
+      "type": "string"
+    }
+  },
+  "$id": "https://litharness.dev/schemas/gate_result.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "properties": {
+    "blocking": {
+      "type": "boolean"
+    },
+    "calibration_id": {
+      "type": "string"
+    },
+    "detail": {
+      "type": "string"
+    },
+    "gate": {
+      "$ref": "#/$defs/GateKind"
+    },
+    "passed": {
+      "type": "boolean"
+    },
+    "rule_or_critic_id": {
+      "type": "string"
+    },
+    "score": {
+      "type": "number"
+    },
+    "threshold": {
+      "type": "number"
+    },
+    "verdict_source": {
+      "$ref": "#/$defs/VerdictSource"
+    },
+    "vetoes": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "gate",
+    "rule_or_critic_id",
+    "passed"
+  ],
+  "title": "GateResult",
+  "type": "object"
+}

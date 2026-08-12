@@ -59,96 +59,6 @@
       ],
       "type": "object"
     },
-    "BlockKind": {
-      "enum": [
-        "prose",
-        "status_window",
-        "level_up",
-        "quest_log",
-        "system_message",
-        "unknown"
-      ],
-      "type": "string"
-    },
-    "LockKind": {
-      "enum": [
-        "none",
-        "content",
-        "structure",
-        "published",
-        "unknown"
-      ],
-      "type": "string"
-    },
-    "ManuscriptNode": {
-      "additionalProperties": true,
-      "properties": {
-        "block_kind": {
-          "$ref": "#/$defs/BlockKind"
-        },
-        "block_payload": {
-          "additionalProperties": {},
-          "type": "object"
-        },
-        "content": {
-          "type": "string"
-        },
-        "content_sha256": {
-          "type": "string"
-        },
-        "kind": {
-          "$ref": "#/$defs/NodeKind"
-        },
-        "lock_kind": {
-          "$ref": "#/$defs/LockKind"
-        },
-        "locked": {
-          "type": "boolean"
-        },
-        "logical_id": {
-          "type": "string"
-        },
-        "metadata": {
-          "additionalProperties": {},
-          "type": "object"
-        },
-        "parent_logical_id": {
-          "type": "string"
-        },
-        "position_key": {
-          "type": "string"
-        },
-        "title": {
-          "type": "string"
-        },
-        "tombstone_reason": {
-          "type": "string"
-        },
-        "tombstoned": {
-          "type": "boolean"
-        },
-        "version_id": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "logical_id",
-        "kind",
-        "position_key"
-      ],
-      "type": "object"
-    },
-    "NodeKind": {
-      "enum": [
-        "book",
-        "part",
-        "chapter",
-        "scene",
-        "block",
-        "unknown"
-      ],
-      "type": "string"
-    },
     "ResourceKind": {
       "enum": [
         "manuscript_book",
@@ -225,39 +135,90 @@
       "type": "object"
     }
   },
-  "$id": "https://litharness.dev/schemas/manuscript_revision.schema.json",
+  "$id": "https://litharness.dev/schemas/digest_entry.schema.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "additionalProperties": true,
   "properties": {
+    "audit_samples": {
+      "items": {
+        "$ref": "#/$defs/ResourceRef"
+      },
+      "type": "array"
+    },
     "book_id": {
       "type": "string"
     },
-    "branch_id": {
+    "budget_usd": {
+      "type": "number"
+    },
+    "candidates_accepted": {
+      "type": "integer"
+    },
+    "candidates_refused": {
+      "type": "integer"
+    },
+    "digest_id": {
       "type": "string"
+    },
+    "exceptions_open": {
+      "type": "integer"
+    },
+    "extra": {
+      "additionalProperties": {},
+      "type": "object"
+    },
+    "findings_closed": {
+      "type": "integer"
+    },
+    "findings_opened": {
+      "type": "integer"
+    },
+    "invocations": {
+      "type": "integer"
+    },
+    "jobs_failed": {
+      "type": "integer"
+    },
+    "jobs_succeeded": {
+      "type": "integer"
     },
     "meta": {
       "$ref": "#/$defs/ArtifactMeta"
     },
-    "nodes": {
+    "notes": {
       "items": {
-        "$ref": "#/$defs/ManuscriptNode"
+        "type": "string"
       },
       "type": "array"
     },
-    "parent_revision_id": {
+    "period_end": {
       "type": "string"
     },
-    "revision_id": {
+    "period_start": {
       "type": "string"
+    },
+    "spend_usd": {
+      "type": "number"
+    },
+    "ticks": {
+      "type": "integer"
+    },
+    "total_tokens": {
+      "type": "integer"
+    },
+    "units_parked": {
+      "type": "integer"
+    },
+    "words_accepted": {
+      "type": "integer"
     }
   },
   "required": [
     "meta",
-    "book_id",
-    "branch_id",
-    "revision_id",
-    "nodes"
+    "digest_id",
+    "period_start",
+    "period_end"
   ],
-  "title": "ManuscriptRevision",
+  "title": "DigestEntry",
   "type": "object"
 }

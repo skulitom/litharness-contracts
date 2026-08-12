@@ -59,92 +59,68 @@
       ],
       "type": "object"
     },
-    "BlockKind": {
+    "GateKind": {
       "enum": [
-        "prose",
-        "status_window",
-        "level_up",
-        "quest_log",
-        "system_message",
+        "shape",
+        "integrity",
+        "craft",
+        "budget",
         "unknown"
       ],
       "type": "string"
     },
-    "LockKind": {
-      "enum": [
-        "none",
-        "content",
-        "structure",
-        "published",
-        "unknown"
-      ],
-      "type": "string"
-    },
-    "ManuscriptNode": {
+    "GateResult": {
       "additionalProperties": true,
       "properties": {
-        "block_kind": {
-          "$ref": "#/$defs/BlockKind"
-        },
-        "block_payload": {
-          "additionalProperties": {},
-          "type": "object"
-        },
-        "content": {
-          "type": "string"
-        },
-        "content_sha256": {
-          "type": "string"
-        },
-        "kind": {
-          "$ref": "#/$defs/NodeKind"
-        },
-        "lock_kind": {
-          "$ref": "#/$defs/LockKind"
-        },
-        "locked": {
+        "blocking": {
           "type": "boolean"
         },
-        "logical_id": {
+        "calibration_id": {
           "type": "string"
         },
-        "metadata": {
-          "additionalProperties": {},
-          "type": "object"
-        },
-        "parent_logical_id": {
+        "detail": {
           "type": "string"
         },
-        "position_key": {
-          "type": "string"
+        "gate": {
+          "$ref": "#/$defs/GateKind"
         },
-        "title": {
-          "type": "string"
-        },
-        "tombstone_reason": {
-          "type": "string"
-        },
-        "tombstoned": {
+        "passed": {
           "type": "boolean"
         },
-        "version_id": {
+        "rule_or_critic_id": {
           "type": "string"
+        },
+        "score": {
+          "type": "number"
+        },
+        "threshold": {
+          "type": "number"
+        },
+        "verdict_source": {
+          "$ref": "#/$defs/VerdictSource"
+        },
+        "vetoes": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
         }
       },
       "required": [
-        "logical_id",
-        "kind",
-        "position_key"
+        "gate",
+        "rule_or_critic_id",
+        "passed"
       ],
       "type": "object"
     },
-    "NodeKind": {
+    "PolicyOutcome": {
       "enum": [
-        "book",
-        "part",
-        "chapter",
-        "scene",
-        "block",
+        "accept",
+        "retry",
+        "repair",
+        "regenerate",
+        "park",
+        "escalate",
         "unknown"
       ],
       "type": "string"
@@ -223,41 +199,89 @@
         "version"
       ],
       "type": "object"
+    },
+    "VerdictSource": {
+      "enum": [
+        "deterministic",
+        "calibrated_critic",
+        "uncalibrated_critic",
+        "human",
+        "model_self_report",
+        "unknown"
+      ],
+      "type": "string"
     }
   },
-  "$id": "https://litharness.dev/schemas/manuscript_revision.schema.json",
+  "$id": "https://litharness.dev/schemas/policy_decision_record.schema.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "additionalProperties": true,
   "properties": {
-    "book_id": {
+    "attempt": {
+      "type": "integer"
+    },
+    "cost_usd": {
+      "type": "number"
+    },
+    "decided_at": {
       "type": "string"
     },
-    "branch_id": {
+    "decision_id": {
+      "type": "string"
+    },
+    "escalation_id": {
+      "type": "string"
+    },
+    "fell_back_from": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "gates": {
+      "items": {
+        "$ref": "#/$defs/GateResult"
+      },
+      "type": "array"
+    },
+    "invocations": {
+      "type": "integer"
+    },
+    "job_id": {
       "type": "string"
     },
     "meta": {
       "$ref": "#/$defs/ArtifactMeta"
     },
-    "nodes": {
-      "items": {
-        "$ref": "#/$defs/ManuscriptNode"
-      },
-      "type": "array"
-    },
-    "parent_revision_id": {
+    "model": {
       "type": "string"
     },
-    "revision_id": {
+    "outcome": {
+      "$ref": "#/$defs/PolicyOutcome"
+    },
+    "policy_config_digest": {
       "type": "string"
+    },
+    "profile": {
+      "type": "string"
+    },
+    "provider": {
+      "type": "string"
+    },
+    "resulting_revision_id": {
+      "type": "string"
+    },
+    "subject": {
+      "$ref": "#/$defs/ResourceRef"
+    },
+    "total_tokens": {
+      "type": "integer"
     }
   },
   "required": [
     "meta",
-    "book_id",
-    "branch_id",
-    "revision_id",
-    "nodes"
+    "decision_id",
+    "outcome"
   ],
-  "title": "ManuscriptRevision",
+  "title": "PolicyDecisionRecord",
   "type": "object"
 }

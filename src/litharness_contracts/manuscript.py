@@ -25,8 +25,58 @@ class NodeKind(str, enum.Enum):
     UNKNOWN = "unknown"
 
 
+class BlockKind(str, enum.Enum):
+    """What a ``BLOCK`` node contains. 1.1 addition.
+
+    LitHarness PLAN.md section 11 requires game-system displays — status windows,
+    level-up notices, quest text — to be *data* rather than decoration, so that diffing,
+    evidence spans, detection and export treat system voice like any other span. 1.0 had
+    a bare ``NodeKind.BLOCK`` with nowhere to put the machine payload, and neither golden
+    fixture contained a single block node, so nothing had ever exercised it.
+
+    ``PROSE`` is the escape hatch for a block that is not a system display.
+    """
+
+    PROSE = "prose"
+    STATUS_WINDOW = "status_window"
+    LEVEL_UP = "level_up"
+    QUEST_LOG = "quest_log"
+    SYSTEM_MESSAGE = "system_message"
+    UNKNOWN = "unknown"
+
+
+class LockKind(str, enum.Enum):
+    """Why a node is frozen. 1.1 addition, and strictly richer than ``locked: bool``.
+
+    A boolean cannot distinguish "the director vetoed this sentence" from "this chapter
+    is published and changing it needs an erratum policy" (PLAN.md section 16), and those
+    two demand different handling on every path that would touch the node.
+
+    ``locked`` remains and remains authoritative for consumers that only understand it:
+    a producer sets ``locked = kind is not NONE``, so a 1.0 reader still sees every lock
+    and never mistakes a frozen node for a free one. That is what keeps this additive.
+    """
+
+    NONE = "none"
+    #: Text frozen; children and ordering may still change.
+    CONTENT = "content"
+    #: Children and ordering frozen; text may still change.
+    STRUCTURE = "structure"
+    #: Both frozen, and a change requires a publication-policy decision.
+    PUBLISHED = "published"
+    UNKNOWN = "unknown"
+
+
 @dataclass
 class ManuscriptNode:
+    """One node version in the manuscript tree.
+
+    ``lock_kind``, ``block_kind`` and ``block_payload`` are 1.1 additions. All three were
+    carried in ``metadata`` by LitHarness's IR before they existed here — deliberately, so
+    the wire shape would be proven by a consumer rather than guessed ahead of one. They
+    are promoted now that it has been.
+    """
+
     logical_id: str
     kind: NodeKind
     position_key: str
@@ -37,6 +87,20 @@ class ManuscriptNode:
     version_id: str | None = None
     locked: bool = False
     metadata: dict[str, Any] = field(default_factory=dict)
+    # -- 1.1 additions --------------------------------------------------------------
+    # Every one defaults to None rather than to a "natural" default like NONE, False or
+    # {}. That is a compatibility requirement, not a style choice: the serializer omits
+    # None and only None, so a field defaulting to LockKind.NONE would append
+    # `"lock_kind": "none"` to every node ever written — changing the bytes of every
+    # existing artifact and every content address derived from them. Absent means "not
+    # stated by the producer", which is what a 1.0 producer actually means.
+    #: Refines `locked`; never contradicts it. A producer setting this must also set
+    #: `locked = kind is not NONE` so a 1.0 reader still sees the lock.
+    lock_kind: LockKind | None = None
+    block_kind: BlockKind | None = None
+    block_payload: dict[str, Any] | None = None
+    tombstoned: bool | None = None
+    tombstone_reason: str | None = None
 
 
 @dataclass

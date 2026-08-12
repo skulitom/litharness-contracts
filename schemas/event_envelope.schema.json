@@ -16,6 +16,14 @@
         "ArtifactRecomputed",
         "ExportCreated",
         "JobFailed",
+        "TickCompleted",
+        "DirectiveIngested",
+        "PolicyDecisionRecorded",
+        "ExceptionRaised",
+        "ExceptionResolved",
+        "DigestPublished",
+        "ProviderFellBack",
+        "BudgetExhausted",
         "unknown"
       ],
       "type": "string"

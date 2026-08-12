@@ -59,92 +59,26 @@
       ],
       "type": "object"
     },
-    "BlockKind": {
+    "DirectiveKind": {
       "enum": [
-        "prose",
-        "status_window",
-        "level_up",
-        "quest_log",
-        "system_message",
+        "premise",
+        "constraint",
+        "arc_note",
+        "tone_note",
+        "chapter_note",
+        "veto",
+        "control",
         "unknown"
       ],
       "type": "string"
     },
-    "LockKind": {
+    "DirectiveStatus": {
       "enum": [
-        "none",
-        "content",
-        "structure",
-        "published",
-        "unknown"
-      ],
-      "type": "string"
-    },
-    "ManuscriptNode": {
-      "additionalProperties": true,
-      "properties": {
-        "block_kind": {
-          "$ref": "#/$defs/BlockKind"
-        },
-        "block_payload": {
-          "additionalProperties": {},
-          "type": "object"
-        },
-        "content": {
-          "type": "string"
-        },
-        "content_sha256": {
-          "type": "string"
-        },
-        "kind": {
-          "$ref": "#/$defs/NodeKind"
-        },
-        "lock_kind": {
-          "$ref": "#/$defs/LockKind"
-        },
-        "locked": {
-          "type": "boolean"
-        },
-        "logical_id": {
-          "type": "string"
-        },
-        "metadata": {
-          "additionalProperties": {},
-          "type": "object"
-        },
-        "parent_logical_id": {
-          "type": "string"
-        },
-        "position_key": {
-          "type": "string"
-        },
-        "title": {
-          "type": "string"
-        },
-        "tombstone_reason": {
-          "type": "string"
-        },
-        "tombstoned": {
-          "type": "boolean"
-        },
-        "version_id": {
-          "type": "string"
-        }
-      },
-      "required": [
-        "logical_id",
-        "kind",
-        "position_key"
-      ],
-      "type": "object"
-    },
-    "NodeKind": {
-      "enum": [
-        "book",
-        "part",
-        "chapter",
-        "scene",
-        "block",
+        "received",
+        "interpreted",
+        "applied",
+        "conflicted",
+        "superseded",
         "unknown"
       ],
       "type": "string"
@@ -225,39 +159,65 @@
       "type": "object"
     }
   },
-  "$id": "https://litharness.dev/schemas/manuscript_revision.schema.json",
+  "$id": "https://litharness.dev/schemas/directive.schema.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "additionalProperties": true,
   "properties": {
+    "body": {
+      "type": "string"
+    },
     "book_id": {
       "type": "string"
     },
     "branch_id": {
       "type": "string"
     },
+    "directive_id": {
+      "type": "string"
+    },
+    "interpretation": {
+      "type": "string"
+    },
+    "interpreted_at": {
+      "type": "string"
+    },
+    "kind": {
+      "$ref": "#/$defs/DirectiveKind"
+    },
     "meta": {
       "$ref": "#/$defs/ArtifactMeta"
     },
-    "nodes": {
+    "precedence": {
+      "type": "integer"
+    },
+    "produced_constraint_ids": {
       "items": {
-        "$ref": "#/$defs/ManuscriptNode"
+        "type": "string"
       },
       "type": "array"
     },
-    "parent_revision_id": {
+    "received_at": {
       "type": "string"
     },
-    "revision_id": {
+    "status": {
+      "$ref": "#/$defs/DirectiveStatus"
+    },
+    "superseded_by": {
       "type": "string"
+    },
+    "targets": {
+      "items": {
+        "$ref": "#/$defs/ResourceRef"
+      },
+      "type": "array"
     }
   },
   "required": [
     "meta",
-    "book_id",
-    "branch_id",
-    "revision_id",
-    "nodes"
+    "directive_id",
+    "kind",
+    "body"
   ],
-  "title": "ManuscriptRevision",
+  "title": "Directive",
   "type": "object"
 }

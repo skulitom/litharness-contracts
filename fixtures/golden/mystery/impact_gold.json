@@ -1,6 +1,6 @@
 {
   "meta": {
-    "schema_version": "1.0.0",
+    "schema_version": "1.1.0",
     "artifact_id": "f9710db6-2733-54e7-a8d0-6a8a3e4602a6",
     "artifact_kind": "gold_impact_suite",
     "created_at": "2026-08-12T00:00:00Z",
@@ -29,7 +29,7 @@
       "description": "Move the discovery of the brass key from scene 2 to scene 5.",
       "change_set": {
         "meta": {
-          "schema_version": "1.0.0",
+          "schema_version": "1.1.0",
           "artifact_id": "8a4fa17b-28fb-5cd9-b7d2-32ea41fd3502",
           "artifact_kind": "change_set",
           "created_at": "2026-08-12T00:00:00Z",
@@ -200,7 +200,7 @@
       "description": "Rename Julian Vane to Adrian Vane; the alias 'the nephew' is preserved.",
       "change_set": {
         "meta": {
-          "schema_version": "1.0.0",
+          "schema_version": "1.1.0",
           "artifact_id": "23ec49c9-2aac-5200-8301-75e95d2d1368",
           "artifact_kind": "change_set",
           "created_at": "2026-08-12T00:00:00Z",
@@ -366,7 +366,7 @@
       "description": "Typography-only edit in scene 1; semantic propagation must not expand.",
       "change_set": {
         "meta": {
-          "schema_version": "1.0.0",
+          "schema_version": "1.1.0",
           "artifact_id": "1986dae7-1a79-5e48-9b5f-47488a07e044",
           "artifact_kind": "change_set",
           "created_at": "2026-08-12T00:00:00Z",

@@ -1,6 +1,6 @@
 {
   "meta": {
-    "schema_version": "1.0.0",
+    "schema_version": "1.1.0",
     "artifact_id": "fdaa9992-053f-525b-9a79-d498bf3ec87f",
     "artifact_kind": "gold_impact_suite",
     "created_at": "2026-08-12T00:00:00Z",
@@ -29,7 +29,7 @@
       "description": "Change the storm lantern's price from twenty to twelve gold.",
       "change_set": {
         "meta": {
-          "schema_version": "1.0.0",
+          "schema_version": "1.1.0",
           "artifact_id": "8173c1d7-78de-5025-a0b8-62efea52d06d",
           "artifact_kind": "change_set",
           "created_at": "2026-08-12T00:00:00Z",

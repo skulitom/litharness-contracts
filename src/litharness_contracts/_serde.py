@@ -17,7 +17,7 @@ import enum
 import types
 import typing
 
-SCHEMA_VERSION = "1.0.0"
+SCHEMA_VERSION = "1.1.0"
 
 
 class ContractError(ValueError):

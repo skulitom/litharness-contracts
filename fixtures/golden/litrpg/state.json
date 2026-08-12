@@ -1,6 +1,6 @@
 {
   "meta": {
-    "schema_version": "1.0.0",
+    "schema_version": "1.1.0",
     "artifact_id": "5cc18f7d-1dc4-557d-a572-e0dd2cf32294",
     "artifact_kind": "state_snapshot",
     "created_at": "2026-08-12T00:00:00Z",

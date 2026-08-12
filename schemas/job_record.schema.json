@@ -169,8 +169,21 @@
     "job_kind": {
       "type": "string"
     },
+    "lease_expires_at": {
+      "type": "number"
+    },
+    "lease_holder": {
+      "type": "string"
+    },
     "meta": {
       "$ref": "#/$defs/ArtifactMeta"
+    },
+    "payload": {
+      "additionalProperties": {},
+      "type": "object"
+    },
+    "priority": {
+      "type": "integer"
     },
     "status": {
       "$ref": "#/$defs/JobStatus"

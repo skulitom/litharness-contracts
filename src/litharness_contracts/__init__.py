@@ -15,6 +15,20 @@ from ._serde import (
     schema_major,
     to_jsonable,
 )
+from .conductor import (
+    DigestEntry,
+    Directive,
+    DirectiveKind,
+    DirectiveStatus,
+    ExceptionKind,
+    ExceptionRecord,
+    ExceptionStatus,
+    GateKind,
+    GateResult,
+    PolicyDecisionRecord,
+    PolicyOutcome,
+    VerdictSource,
+)
 from .context import (
     ContextItem,
     ContextItemKind,
@@ -62,7 +76,9 @@ from .goldens import (
 )
 from .ids import EvidenceSpan, ResourceKind, ResourceRef, StoryPosition
 from .manuscript import (
+    BlockKind,
     BoundedPatch,
+    LockKind,
     ManuscriptNode,
     ManuscriptRevision,
     NodeKind,
@@ -128,6 +144,11 @@ ARTIFACT_TYPES: dict[str, type] = {
     "event_envelope": EventEnvelope,
     "gold_context_suite": GoldContextSuite,
     "gold_impact_suite": GoldImpactSuite,
+    # Conductor artifacts (1.1). PLAN.md section 4.
+    "directive": Directive,
+    "policy_decision_record": PolicyDecisionRecord,
+    "exception_record": ExceptionRecord,
+    "digest_entry": DigestEntry,
 }
 
 # Value objects that also get standalone schemas because siblings exchange
@@ -138,6 +159,9 @@ VALUE_TYPES: dict[str, type] = {
     "finding": Finding,
     "context_item": ContextItem,
     "state_record": StateRecord,
+    # A gate result is exchanged on its own, not only inside a decision record:
+    # an evaluator reports one without owning the decision that consumes it.
+    "gate_result": GateResult,
 }
 
 ALL_SCHEMA_TYPES: dict[str, type] = {**ARTIFACT_TYPES, **VALUE_TYPES}
@@ -151,6 +175,7 @@ ALL_SCHEMA_TYPES: dict[str, type] = {**ARTIFACT_TYPES, **VALUE_TYPES}
 __all__ = [
     "ApprovalMode",
     "ArtifactMeta",
+    "BlockKind",
     "BoundedPatch",
     "CandidateStatus",
     "ChangeActor",
@@ -166,12 +191,19 @@ __all__ = [
     "ContractError",
     "CriticSpec",
     "DetectorSpec",
+    "DigestEntry",
+    "Directive",
+    "DirectiveKind",
+    "DirectiveStatus",
     "EvaluationArtifact",
     "EvaluationError",
     "EvaluationPlan",
     "EventEnvelope",
     "EventType",
     "EvidenceSpan",
+    "ExceptionKind",
+    "ExceptionRecord",
+    "ExceptionStatus",
     "ExportFile",
     "ExportFormat",
     "ExportManifest",
@@ -181,6 +213,8 @@ __all__ = [
     "FindingCategory",
     "FindingScope",
     "FindingStatus",
+    "GateKind",
+    "GateResult",
     "GenerationCandidate",
     "GenerationKind",
     "GenerationParams",
@@ -201,6 +235,7 @@ __all__ = [
     "InputRef",
     "JobRecord",
     "JobStatus",
+    "LockKind",
     "ManuscriptNode",
     "ManuscriptRevision",
     "ModelIdentifier",
@@ -212,6 +247,8 @@ __all__ = [
     "PlanItem",
     "PlanKind",
     "PlanSnapshot",
+    "PolicyDecisionRecord",
+    "PolicyOutcome",
     "RejectedCandidate",
     "Reproduction",
     "ResourceKind",
@@ -234,6 +271,7 @@ __all__ = [
     "TokenUsage",
     "ToolIdentity",
     "ValidationOutcome",
+    "VerdictSource",
     "declared_schema_version",
     "from_jsonable",
     "parse_artifact",
