@@ -10,16 +10,21 @@ import pytest
 
 import litharness_contracts as lc
 from litharness_contracts.fixture_build import build_fixture
+from litharness_contracts.fixtures import (
+    FIXTURE_IDS,
+    GOLDEN_FILENAMES,
+    golden_path,
+    golden_root,
+)
 
 ROOT = Path(__file__).resolve().parent.parent
 SOURCE_DIR = ROOT / "fixtures" / "source"
-GOLDEN_DIR = ROOT / "fixtures" / "golden"
 
 FIXTURES = sorted(p.name for p in SOURCE_DIR.iterdir() if p.is_dir())
 
 
 def _load_golden(fixture: str, filename: str) -> dict:
-    return json.loads((GOLDEN_DIR / fixture / filename).read_text(encoding="utf-8"))
+    return json.loads(golden_path(fixture, filename).read_text(encoding="utf-8"))
 
 
 def _scene_texts(fixture: str) -> dict[str, str]:
@@ -167,6 +172,47 @@ def test_context_gold_targets_resolve(fixture: str) -> None:
                 lc.ResourceKind.WORLD_RULE,
             ):
                 assert target.ref.logical_id in record_ids
+
+
+# --- the accessor -----------------------------------------------------------------------
+
+
+def test_the_accessor_resolves_every_artifact_of_every_fixture() -> None:
+    """Twelve files, named explicitly. The accessor is what consumers get instead of their
+    own checkout-finding heuristic, so "the package can see its own fixtures" is the property
+    a wheel has to keep. This half runs against the source tree; CI's `wheel` job builds a
+    wheel and asserts the same twelve members are inside it, which is the half that would
+    catch a build-config change dropping the data files."""
+    resolved = [
+        golden_path(fixture_id, filename)
+        for fixture_id in FIXTURE_IDS
+        for filename in GOLDEN_FILENAMES
+    ]
+
+    assert len(resolved) == 12
+    assert all(path.is_file() for path in resolved)
+    assert {path.parent.name for path in resolved} == set(FIXTURE_IDS)
+    assert sorted(golden_root().glob("*/*.json")) == sorted(resolved)
+
+
+def test_the_accessor_declares_the_same_fixtures_the_sources_do() -> None:
+    """`FIXTURE_IDS` is a hand-written tuple, so it can drift from what is on disk."""
+    assert sorted(FIXTURE_IDS) == FIXTURES
+    assert sorted(p.name for p in golden_root().iterdir() if p.is_dir()) == FIXTURES
+
+
+@pytest.mark.parametrize(
+    ("fixture_id", "filename", "expected"),
+    [
+        ("thriller", "manuscript.json", "mystery, litrpg"),
+        ("mystery", "scenes.json", "manuscript.json"),
+    ],
+)
+def test_an_unknown_name_is_answered_with_the_ones_that_exist(
+    fixture_id: str, filename: str, expected: str
+) -> None:
+    with pytest.raises(FileNotFoundError, match=expected):
+        golden_path(fixture_id, filename)
 
 
 def test_mystery_pov_trap_exists() -> None:

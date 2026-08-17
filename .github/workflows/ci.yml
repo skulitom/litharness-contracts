@@ -22,3 +22,25 @@ jobs:
           enable-cache: true
       - run: uv sync --locked
       - run: uv run pytest
+
+  # The golden fixtures ship *inside* the package as of 0.2.0, and consumers depend on that:
+  # LitHarness resolves this repo as a git dependency pinned in its `uv.lock` and reads the
+  # books through `litharness_contracts.fixtures`, with no checkout of this repo anywhere.
+  # The suite above proves the accessor works against the source tree, which is exactly the
+  # condition under which a build-config regression is invisible — `packages = [...]` losing
+  # its data files would keep every test green and ship an empty wheel. So the wheel itself
+  # is opened and counted.
+  wheel:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.13"
+      - uses: astral-sh/setup-uv@ae62891fec2bb8e7d6c99fc78c9fec3a63790f8d # v10.0.0
+        with:
+          enable-cache: true
+      - run: uv build --wheel
+      - name: the wheel carries all twelve golden artifacts
+        run: uv run --no-project python tools/check_wheel_fixtures.py

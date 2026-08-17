@@ -6,17 +6,17 @@ projects — BookWorldState, LongRangeContext, ContinuityEvaluation,
 RevisionPropagation, and LitHarness itself — depend on this package's schemas
 and fixtures **instead of importing each other**.
 
-License: TBD — resolve alongside the BookWorldState license decision
-(LitHarness PLAN §23.3) before anything is published.
+Licensed Apache-2.0 (`LICENSE`), alongside the BookWorldState license decision
+(LitHarness PLAN §23.3).
 
 ## What is in here
 
 | Path | Contents |
 |---|---|
 | `src/litharness_contracts/` | Python dataclasses for every contract type — the source of truth |
+| `src/litharness_contracts/fixtures/golden/` | Generated, span-exact gold artifacts the incubators consume — **inside the package, so they ship in the wheel** |
 | `schemas/` | JSON Schema (draft 2020-12), generated from the dataclasses |
-| `fixtures/source/` | Two golden six-scene books: prose (`.md`) + annotations (`def.json`) |
-| `fixtures/golden/` | Generated, span-exact gold artifacts the incubators consume |
+| `fixtures/source/` | Two golden six-scene books: prose (`.md`) + annotations (`def.json`) — authoring input, not shipped |
 | `tools/` | `generate_schemas.py`, `build_fixtures.py` (regeneration commands) |
 | `tests/` | Round-trip, compatibility, schema-drift, and fixture-integrity tests |
 
@@ -97,7 +97,7 @@ intentionally repeating status-block format.
 > example. Either way it is authored ground truth and therefore human work, and it must
 > not be resolved by loosening the detector.
 
-Per fixture, `fixtures/golden/<name>/` contains:
+Per fixture, `src/litharness_contracts/fixtures/golden/<name>/` contains:
 
 - `manuscript.json` — `ManuscriptRevision` with inline scene content and hashes
 - `plans.json` — `PlanSnapshot` including locked constraints and promises
@@ -110,6 +110,31 @@ Per fixture, `fixtures/golden/<name>/` contains:
   expected impact labels `must_update | inspect | derived_only |
   safe_preserve`, including a typography-only negative control
   (RevisionPropagation consumes this)
+
+### Reading them
+
+The fixtures live inside the package and travel with the wheel, so a consumer needs an
+install of `litharness-contracts` and no checkout of this repository:
+
+```python
+import json
+
+import litharness_contracts as lc
+from litharness_contracts.fixtures import FIXTURE_IDS, GOLDEN_FILENAMES, golden_path
+
+path = golden_path("mystery", "findings.json")
+findings = lc.parse_artifact(lc.EvaluationArtifact, json.loads(path.read_text("utf-8")))
+```
+
+`golden_path` is the one canonical implementation of fixture discovery, and it is deliberate
+that it is here rather than in each consumer. Before 0.2.0 the goldens sat at `fixtures/golden/`
+in the repository root — outside the importable package, absent from every wheel — so each
+incubator carried its own chain of guesses for finding a *checkout* of this repo: an
+environment variable, a walk up from the package's own `__file__`, a sibling-directory guess,
+in places a machine-bound absolute path. Five implementations of one question is how two
+checkouts end up reading different books. Consumers that still want to point at a
+work-in-progress checkout should do it by installing that checkout (`uv pip install -e`),
+which moves the accessor rather than going around it.
 
 ## Regeneration
 
@@ -126,10 +151,13 @@ span in every golden is re-resolved and hash-checked on each test run.
 
 ## Consumption rules for the incubators
 
-1. Depend on this package (path dependency or pinned version); never import a
-   sibling project.
-2. Read goldens with `parse_artifact(<Type>, json.loads(...))` — this enforces
-   the major-version gate.
+1. Depend on this package by a pinned rev — `{ git = "...", rev = "<sha>" }` recorded in
+   your `uv.lock`, which is what LitHarness does — and never import a sibling project. A
+   relative path dependency is not pinnable and needs a checkout beside yours; both were
+   reasons consumers could not be tested from a single clone.
+2. Read goldens through `litharness_contracts.fixtures.golden_path`, then
+   `parse_artifact(<Type>, json.loads(...))` — the first finds the file the same way
+   everywhere, the second enforces the major-version gate.
 3. Benchmark against `GoldContextSuite` / `GoldImpactSuite` / the gold
    `EvaluationArtifact` rather than inventing per-repo annotation formats.
 4. Negative controls are as load-bearing as defects: reporting

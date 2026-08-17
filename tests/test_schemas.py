@@ -9,10 +9,10 @@ import pytest
 
 import litharness_contracts as lc
 from litharness_contracts._schema import render_schema
+from litharness_contracts.fixtures import golden_root
 
 ROOT = Path(__file__).resolve().parent.parent
 SCHEMA_DIR = ROOT / "schemas"
-GOLDEN_DIR = ROOT / "fixtures" / "golden"
 
 GOLDEN_TYPE_BY_FILE = {
     "manuscript.json": lc.ManuscriptRevision,
@@ -45,7 +45,7 @@ def test_committed_schema_matches_generated(name: str) -> None:
 
 
 def _golden_files() -> list[Path]:
-    return sorted(GOLDEN_DIR.glob("*/*.json"))
+    return sorted(golden_root().glob("*/*.json"))
 
 
 @pytest.mark.parametrize("path", _golden_files(), ids=lambda p: f"{p.parent.name}/{p.name}")
